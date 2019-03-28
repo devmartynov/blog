@@ -1,0 +1,25 @@
+{
+  "name": "blog",
+  "version": "1.0.0",
+  "license": "MIT",
+  "scripts": {
+    "watch": "node webpack",
+    "storybook": "start-storybook -p 6006",
+    "build": "node webpack production",
+    "build-storybook": "build-storybook"
+  },
+  "dependencies": {
+    "json-loader": "^0.5.7",
+    "yii-steroids": "^1.7.10"
+  },
+  "devDependencies": {
+    "@storybook/addon-actions": "^5.0.5",
+    "@storybook/addon-info": "^5.0.5",
+    "@storybook/addon-knobs": "^5.0.5",
+    "@storybook/addon-links": "^5.0.5",
+    "@storybook/addon-options": "^5.0.5",
+    "@storybook/addons": "^5.0.5",
+    "@storybook/react": "^5.0.5",
+    "storybook-readme": "^5.0.1"
+  }
+}

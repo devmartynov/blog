@@ -1,0 +1,52 @@
+// base colors
+$color-base: #fff;
+$color-base-revert: #000;
+
+// brand colors
+$brand-blue: #0066FF;
+$brand-yellow: #FFF45F;
+$brand-black: #151515;
+
+// text colors
+$white: #FFF;
+$grey-light: #E0E0E0;
+$grey: #9E9E9E;
+$grey-dark: #616161;
+$grey-darker: #212121;
+$black: #151515;
+
+// links colors
+$blue-light: #9DC4FF;
+$blue: #0066FF;
+$blue-dark: #0046B1;
+
+// other colors
+$red: #E53935;
+$blue-lighter: #EBF3FF;
+$blue-darker: #002F76;
+
+// Opacity
+$hover-opacity: 0.7;
+$disabled-opacity: 0.4;
+
+// Media Query Width
+$mqw-mobile: 320px;
+$mqw-tablet: 768px;
+$mqw-desktop: 1024px;
+$mqw-wrapper: 1200px;
+
+// Font Family
+$ff-raleway: 'Raleway', sans-serif;
+
+// Z-index
+$zi-sticky: 80;
+$zi-header: 90;
+$zi-popup: 100;
+$zi-modal: 110;
+
+// Grid Sized
+$grid-size: 1104px;
+$grid-offset-mobile: 20px;
+$grid-offset-tablet: 48px;
+$grid-offset-desktop: 48px;
+

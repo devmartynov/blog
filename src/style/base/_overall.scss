@@ -1,0 +1,78 @@
+// Overall Styles
+@import '../helpers/vars';
+@import '../helpers/mixins';
+
+//::selection {
+//  background-color: rgba($color-brand-purple, .25);
+//}
+
+html,
+body {
+  min-height: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  background-color: $color-base;
+  font-family: $ff-raleway;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  color: $black;
+  text-size-adjust: 100%;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -webkit-tap-highlight-color: transparent;
+}
+
+input[type="search"] {
+  -webkit-appearance: textfield; //fix safari bug
+}
+
+a {
+  text-decoration: none;
+  color: $blue;
+
+  &:visited {
+    color: $blue;
+  }
+
+  &:hover {
+    color: $blue-dark;
+  }
+}
+
+.wrapper {
+  @include clearfix;
+
+  width: 100%;
+  max-width: $mqw-wrapper;
+  padding-left: $grid-offset-mobile;
+  padding-right: $grid-offset-mobile;
+  margin: 0 auto;
+  box-sizing: border-box;
+
+  @include tablet {
+    padding-left: $grid-offset-tablet;
+    padding-right: $grid-offset-tablet;
+  }
+
+  @include desktop {
+    padding-left: $grid-offset-desktop;
+    padding-right: $grid-offset-desktop;
+  }
+}
+
+.overflow-hidden {
+  overflow: hidden;
+}
+
+img {
+  font-size: 10px;
+  line-height: 10px;
+}
+
+
+
