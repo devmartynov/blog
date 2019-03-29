@@ -1,42 +1,57 @@
 @import './vars';
 @import '../helpers/mixins';
 
-$col-length: 12;
+$col-length: 8;
 $col-width: percentage(100/$col-length)/100;
 
 .row {
   @include clearfix;
-  margin-left: -($grid-offset-mobile / 2);
-  margin-right: -($grid-offset-mobile / 2);
   display: flex;
   flex-wrap: wrap;
+  margin-left: -($grid-offset-small-phone / 2);
+  margin-right: -($grid-offset-small-phone / 2);
+
+  @include phone {
+    margin-left: -($grid-offset-phone / 2);
+    margin-right: -($grid-offset-phone / 2);
+  }
+
+  @include horizontal-phone {
+    margin-left: -($grid-offset-horizontal-phone / 2);
+    margin-right: -($grid-offset-horizontal-phone / 2);
+  }
 
   @include tablet {
     margin-left: -($grid-offset-tablet / 2);
     margin-right: -($grid-offset-tablet / 2);
   }
 
+  @include notebook {
+    margin-left: -($grid-offset-notebook / 2);
+    margin-right: -($grid-offset-notebook / 2);
+  }
+
   @include desktop {
     margin-left: -($grid-offset-desktop / 2);
     margin-right: -($grid-offset-desktop / 2);
-  }
-
-  &_without-push {
-    margin-left: 0;
-    margin-right: 0;
   }
 }
 
 .col {
   float: left;
   width: 100%;
-  padding-left: $grid-offset-mobile / 2;
-  padding-right: $grid-offset-mobile / 2;
+  padding-left: $grid-offset-small-phone / 2;
+  padding-right: $grid-offset-small-phone / 2;
   box-sizing: border-box;
 
-  @include desktop {
-    padding-left: $grid-offset-desktop / 2;
-    padding-right: $grid-offset-desktop / 2;
+  @include phone {
+    padding-left: $grid-offset-phone / 2;
+    padding-right: $grid-offset-phone / 2;
+  }
+
+  @include horizontal-phone {
+    padding-left: $grid-offset-horizontal-phone / 2;
+    padding-right: $grid-offset-horizontal-phone / 2;
   }
 
   @include tablet {
@@ -44,61 +59,23 @@ $col-width: percentage(100/$col-length)/100;
     padding-right: $grid-offset-tablet / 2;
   }
 
-  &_zero {
-    &-left {
-      padding-left: 0;
-    }
-
-    &-right {
-      padding-right: 0;
-    }
-
-    &-both {
-      padding-left: 0;
-      padding-right: 0;
-    }
+  @include notebook {
+    padding-left: $grid-offset-notebook / 2;
+    padding-right: $grid-offset-notebook / 2;
   }
 
-  &_full-width {
-    padding-left: 0;
-    padding-right: 0;
-
+  @include desktop {
+    padding-left: $grid-offset-desktop / 2;
+    padding-right: $grid-offset-desktop / 2;
   }
 
   &_reverse {
     float: right;
     order: 2;
   }
-
-  @include desktop {
-    &_unique {
-      padding-left: 3 * ($grid-offset-desktop / 2);
-    }
-    &_full-width {
-      margin-left: -($grid-offset-desktop / 2);
-      margin-right: -($grid-offset-desktop / 2);
-      width: calc(100% + #{$grid-offset-desktop});
-    }
-  }
-
-  @include tablet {
-    &_full-width {
-      margin-left: -($grid-offset-tablet / 2);
-      margin-right: -($grid-offset-tablet / 2);
-      width: calc(100% + #{$grid-offset-tablet});
-    }
-  }
-
-  @include phone {
-    &_full-width {
-      margin-left: -($grid-offset-mobile / 2);
-      margin-right: -($grid-offset-mobile / 2);
-      width: calc(100% + #{$grid-offset-mobile});
-    }
-  }
 }
 
-// Cols Count
+// cols count
 @for $i from 1 through 12 {
   .col_count-#{$i} {
     width: $col-width * $i;
@@ -119,7 +96,53 @@ $col-width: percentage(100/$col-length)/100;
   }
 }
 
-// Cols Count - Tablet
+// cols count - phone
+@for $i from 1 through 12 {
+  @include phone {
+    .col_phone-count-#{$i} {
+      width: $col-width * $i;
+    }
+
+    .col_phone-coffset-#{$i} {
+      margin-left: $col-width * $i;
+    }
+
+    .col_phone-push-#{$i} {
+      position: relative;
+      left: $col-width * $i;
+    }
+
+    .col_phone-pull-#{$i} {
+      position: relative;
+      right: $col-width * $i;
+    }
+  }
+}
+
+// cols count - horizontal phone
+@for $i from 1 through 12 {
+  @include horizontal-phone {
+    .col_horiz-phone-count-#{$i} {
+      width: $col-width * $i;
+    }
+
+    .col_horiz-phone-coffset-#{$i} {
+      margin-left: $col-width * $i;
+    }
+
+    .col_horiz-phone-push-#{$i} {
+      position: relative;
+      left: $col-width * $i;
+    }
+
+    .col_horiz-phone-pull-#{$i} {
+      position: relative;
+      right: $col-width * $i;
+    }
+  }
+}
+
+// cols count - tablet
 @for $i from 1 through 12 {
   @include tablet {
     .col_tablet-count-#{$i} {
@@ -142,15 +165,30 @@ $col-width: percentage(100/$col-length)/100;
   }
 }
 
-//TO DO find normal solution
-//fix safari bug
-@include tablet {
-  .col_tablet-count-6 {
-    width: 49.9%;
+// cols count - notebook
+@for $i from 1 through 12 {
+  @include notebook {
+    .col_notebook-count-#{$i} {
+      width: $col-width * $i;
+    }
+
+    .col_notebook-coffset-#{$i} {
+      margin-left: $col-width * $i;
+    }
+
+    .col_notebook-push-#{$i} {
+      position: relative;
+      left: $col-width * $i;
+    }
+
+    .col_notebook-pull-#{$i} {
+      position: relative;
+      right: $col-width * $i;
+    }
   }
 }
 
-// Cols Count - Desktop
+// cols count - desktop
 @for $i from 1 through 12 {
   $half-col: (100/12)/2;
   @include desktop {
@@ -178,15 +216,10 @@ $col-width: percentage(100/$col-length)/100;
   }
 }
 
+// TODO: find normal solution
+// fix safari bug
 @include tablet {
-  .col_tablet-reverse {
-    order: 2;
-  }
-}
-
-@include desktop {
-  .col_desk-reverse {
-    order: 2;
-    flex: 1;
+  .col_tablet-count-6 {
+    width: 49.9%;
   }
 }

@@ -15,7 +15,13 @@ export default class MainPage extends React.PureComponent {
     render() {
         return (
             <div className={bem.block()}>
-                Это главная страница сайта
+                <div className='wrapper'>
+                    <div className='row'>
+                        <div className='col'>
+                            Это главная страница сайта
+                        </div>
+                    </div>
+                </div>
             </div>
         );
     }

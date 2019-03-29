@@ -2,9 +2,10 @@
 @import '../helpers/vars';
 @import '../helpers/mixins';
 
-//::selection {
-//  background-color: rgba($color-brand-purple, .25);
-//}
+::selection {
+  background-color: $brand-yellow;
+  color: $text-black;
+}
 
 html,
 body {
@@ -20,7 +21,7 @@ html {
   font-weight: 500;
   font-size: 14px;
   line-height: 20px;
-  color: $black;
+  color: $text-black;
   text-size-adjust: 100%;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -33,14 +34,14 @@ input[type="search"] {
 
 a {
   text-decoration: none;
-  color: $blue;
+  color: $link-blue;
 
   &:visited {
-    color: $blue;
+    color: $link-blue;
   }
 
   &:hover {
-    color: $blue-dark;
+    color: $link-blue-dark;
   }
 }
 
@@ -49,8 +50,8 @@ a {
 
   width: 100%;
   max-width: $mqw-wrapper;
-  padding-left: $grid-offset-mobile;
-  padding-right: $grid-offset-mobile;
+  padding-left: $grid-offset-small-phone;
+  padding-right: $grid-offset-small-phone;
   margin: 0 auto;
   box-sizing: border-box;
 
