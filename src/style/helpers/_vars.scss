@@ -8,45 +8,107 @@ $brand-yellow: #FFF45F;
 $brand-black: #151515;
 
 // text colors
-$white: #FFF;
-$grey-light: #E0E0E0;
-$grey: #9E9E9E;
-$grey-dark: #616161;
-$grey-darker: #212121;
-$black: #151515;
+$text-white: #FFF;
+$text-grey-light: #E0E0E0;
+$text-grey: #9E9E9E;
+$text-grey-dark: #616161;
+$text-grey-darker: #212121;
+$text-black: #151515;
 
 // links colors
-$blue-light: #9DC4FF;
-$blue: #0066FF;
-$blue-dark: #0046B1;
+$link-blue-light: #9DC4FF;
+$link-blue: #0066FF;
+$link-blue-dark: #0046B1;
 
 // other colors
 $red: #E53935;
 $blue-lighter: #EBF3FF;
 $blue-darker: #002F76;
 
-// Opacity
+// opacity
 $hover-opacity: 0.7;
 $disabled-opacity: 0.4;
 
-// Media Query Width
-$mqw-mobile: 320px;
-$mqw-tablet: 768px;
-$mqw-desktop: 1024px;
-$mqw-wrapper: 1200px;
+// media Query Width
+$mqw-small-phone: 374px;
+$mqw-phone: 480px;
+$mqw-horizontal-phone: 668px;
+$mqw-tablet: 992px;
+$mqw-notebook: 1200px;
+$mqw-desktop: 1440px;
 
-// Font Family
+// grid wrapper widths
+$mqw-wrapper: 1200px;
+$mqw-wrapper-small-phone: 100%;
+$mqw-wrapper-phone: 100%;
+$mqw-wrapper-horizontal-phone: 1080px;
+$mqw-wrapper-tablet: 1080px;
+$mqw-wrapper-notebook: 1080px;
+$mqw-wrapper-desktop: 1080px;
+
+// font Family
 $ff-raleway: 'Raleway', sans-serif;
 
-// Z-index
+// z-index
 $zi-sticky: 80;
 $zi-header: 90;
 $zi-popup: 100;
 $zi-modal: 110;
 
-// Grid Sized
-$grid-size: 1104px;
-$grid-offset-mobile: 20px;
-$grid-offset-tablet: 48px;
-$grid-offset-desktop: 48px;
+// grid sizes
+$grid-offset-small-phone: 16px;
+$grid-offset-phone: 32px;
+$grid-offset-horizontal-phone: 48px;
+$grid-offset-tablet: 32px;
+$grid-offset-notebook: 120px;
+$grid-offset-desktop: 240px;
+
+// typography sizes
+// font-size
+$fz-heading-1: 64px;
+$fz-heading-2: 45px;
+$fz-heading-3: 28px;
+$fz-heading-4: 18px;
+$fz-heading-5: 16px;
+$fz-subtitle: 24px;
+$fz-body-text: 18px;
+$fz-table-text: 16px;
+$fz-small-text: 14px;
+$fz-tiny-text: 12px;
+
+// line-height
+$lh-heading-1: 1.1; //70px
+$lh-heading-2: 1.2; //54px
+$lh-heading-3: 1.3; //34px
+$lh-heading-4: 1.5; //27px
+$lh-heading-5: 1.4; //22.4px
+$lh-subtitle: 1.5; //36px
+$lh-body-text: 1.5; //27px
+$lh-table-text: 1.5; //24px
+$lh-small-text: 1.5; //21px
+$lh-tiny-text: 1.5; //18px
+
+// font-weight
+$fw-heading-1: 900;
+$fw-heading-2: 900;
+$fw-heading-3: 800;
+$fw-heading-4: 800;
+$fw-heading-5: 800;
+$fw-subtitle: 500;
+$fw-body-text: 500;
+$fw-table-text: 500;
+$fw-small-text: 500;
+$fw-tiny-text: 500;
+
+// animation duration
+$anim-duration-shortest: 0175s;
+$anim-duration-short: 0.2s;
+$anim-duration-normal: 0.35s;
+$anim-duration-long: 1s;
+
+// animation-timing-function
+$anim-timing-func-ease-in: cubic-bezier(0.47, 0, 0.745, 0.715);
+$anim-timing-func-ease-out: cubic-bezier(0.39, 0.575, 0.565, 1);
+$anim-timing-func-ease-i-out-sine: cubic-bezier(0.445, 0.05, 0.55, 0.95);
+$anim-timing-func-custom: cubic-bezier(0.39, 0.58, 0.57, 1);
 
