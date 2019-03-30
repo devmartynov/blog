@@ -20,9 +20,9 @@ export default class Layout extends React.PureComponent {
         return (
             <div className={bem.block()}>
                 <Header/>
-                <div className={bem.element('content')}>
+                <main className={bem.element('content')}>
                     {this.props.children}
-                </div>
+                </main>
                 <ModalWrapper/>
             </div>
         );
