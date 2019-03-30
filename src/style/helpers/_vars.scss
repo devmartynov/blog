@@ -11,8 +11,9 @@ $brand-black: #151515;
 $text-white: #FFF;
 $text-grey-light: #E0E0E0;
 $text-grey: #9E9E9E;
-$text-grey-dark: #616161;
-$text-grey-darker: #212121;
+$text-grey-dark: #737373;
+$text-grey-darker: #616161;
+$text-grey-darkest: #212121;
 $text-black: #151515;
 
 // links colors
@@ -101,10 +102,11 @@ $fw-small-text: 500;
 $fw-tiny-text: 500;
 
 // animation duration
-$anim-duration-shortest: 0175s;
+$anim-duration-shorter: 0175s;
 $anim-duration-short: 0.2s;
-$anim-duration-normal: 0.35s;
-$anim-duration-long: 1s;
+$anim-duration-normal: 0.3s;
+$anim-duration-long: 0.35s;
+$anim-duration-longer: 1s;
 
 // animation-timing-function
 $anim-timing-func-ease-in: cubic-bezier(0.47, 0, 0.745, 0.715);

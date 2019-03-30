@@ -1,9 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import ModalWrapper from 'yii-steroids/ui/modal/ModalWrapper';
 
 import { html } from 'components';
 import navigationHoc from '../navigationHoc';
 import routesTree from '../../routes';
+import Header from 'shared/Header';
 
 import './Layout.scss';
 
@@ -17,9 +19,11 @@ export default class Layout extends React.PureComponent {
     render() {
         return (
             <div className={bem.block()}>
+                <Header/>
                 <div className={bem.element('content')}>
                     {this.props.children}
                 </div>
+                <ModalWrapper/>
             </div>
         );
     }

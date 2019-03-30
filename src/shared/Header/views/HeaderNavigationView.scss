@@ -1,0 +1,30 @@
+@import '../../../style/helpers/vars';
+@import '../../../style/helpers/mixins';
+
+.HeaderNavigationView {
+  &__list {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  &__link {
+    padding-right: 14px;
+    padding-left: 14px;
+    font-family: $ff-raleway;
+    font-size: $fz-small-text;
+    line-height: $lh-small-text;
+    font-weight: 900;
+
+    &_active {
+      color: $text-black !important;
+    }
+
+    @include notebook {
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+  }
+
+}

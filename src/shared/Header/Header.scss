@@ -1,0 +1,68 @@
+@import '../../style/helpers/mixins';
+@import '../../style/helpers/vars';
+
+.Header {
+  height: 56px;
+
+  @include horizontal-phone {
+    height: 76px;
+  }
+
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 16px 0;
+
+    @include horizontal-phone {
+      padding-top: 24px;
+    }
+
+    @include notebook {
+      padding-left: 64px;
+      padding-right: 64px;
+    }
+  }
+
+  &__logo {
+    .Logo__icon {
+      height: 24px;
+      width: auto;
+
+      @include horizontal-phone {
+        height: 28px;
+      }
+    }
+  }
+
+  &__content {
+    flex-grow: 1;
+    margin-right: 16px;
+
+    @include notebook {
+      margin-right: 80px;
+    }
+  }
+
+  &__content-inner {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  &__nav {
+    margin-right: 64px;
+
+    &_hidden {
+      opacity: 0;
+    }
+
+    @include tablet-down {
+      display: none;
+    }
+  }
+
+  &__me-link_hidden {
+    opacity: 0;
+  }
+}

@@ -1,0 +1,56 @@
+@import '../../style/helpers/mixins';
+@import '../../style/helpers/vars';
+
+.MeLink {
+  $root: &;
+
+  display: block;
+
+  &:hover {
+    #{$root}__image-container {
+      transform: scale(1.0952) translateZ(0);
+    }
+  }
+
+  &__inner {
+    display: flex;
+    align-items: center;
+
+    @include phone {
+      position: relative;
+      padding-right: 58px;
+    }
+  }
+
+  &__text {
+    font-family: $ff-raleway;
+    font-size: $fz-small-text;
+    line-height: $lh-small-text;
+    font-weight: 900;
+    margin-right: 16px;
+
+    @include small-phone {
+      display: none;
+    }
+
+    @include phone {
+      margin-right: 0;
+    }
+  }
+
+  &__image-container {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    overflow: hidden;
+    transform: translateZ(0);
+    will-change: transform;
+    transition: transform $anim-duration-long, width $anim-duration-long, height $anim-duration-long;
+    background-color: $brand-blue;
+
+    @include phone {
+      position: absolute;
+      right: 0;
+    }
+  }
+}

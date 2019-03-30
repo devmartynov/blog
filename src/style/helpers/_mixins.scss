@@ -11,7 +11,7 @@
 
 // Media Query Sizes
 @mixin small-phone {
-  @media screen and (max-width: #{$mqw-phone - 1px}) {
+  @media screen and (max-width: #{$mqw-phone - 1}) {
     @content;
   }
 }
@@ -28,8 +28,20 @@
   }
 }
 
+@mixin horizontal-phone-down {
+  @media screen and (max-width: #{$mqw-horizontal-phone - 1}) {
+    @content;
+  }
+}
+
 @mixin tablet {
   @media screen and (min-width: #{$mqw-tablet}) {
+    @content;
+  }
+}
+
+@mixin tablet-down {
+  @media screen and (max-width: #{$mqw-tablet - 1}) {
     @content;
   }
 }

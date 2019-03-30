@@ -2,11 +2,10 @@ import pathToRegexp from 'path-to-regexp';
 import {matchPath} from 'react-router';
 import _get from 'lodash-es/get';
 import _trimEnd from 'lodash-es/trimEnd';
-import RoutesEnum from '../enums/RoutesEnum';
 
 import {NAVIGATION_INIT_ROUTES, NAVIGATION_SET_PARAMS} from 'actions/navigation';
 
-const DEFAULT_PAGE_TITLE = 'Работа в Украине. Трудоустройство и поиск работы – MY.UA';
+const DEFAULT_PAGE_TITLE = 'Личный блог Мартынов Дениса';
 
 const initialState = {
     routesTree: null,
@@ -57,7 +56,6 @@ const buildNavItem = (state, item, params) => {
         title: item.title,
         label: item.label,
         url: _trimEnd(url, '/') + '/',
-        icon: RoutesEnum.getIconCssClass(item.id) || null,
         isVisible: item.isVisible,
         isActive: checkActiveRecursive(pathname, item),
     };
