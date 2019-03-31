@@ -1,8 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import _isString from 'lodash-es/isString';
 
-import {html} from 'components';
+import { html } from 'components';
 import './ButtonView.scss';
 
 const bem = html.bem('ButtonView');
@@ -41,7 +40,7 @@ export default class ButtonView extends React.PureComponent {
     renderLink() {
         return (
             <a
-                className={this._getClassName({link: true})}
+                className={this._getClassName({ link: true })}
                 href={this.props.url}
                 onClick={this.props.onClick}
             >
@@ -66,15 +65,38 @@ export default class ButtonView extends React.PureComponent {
     renderLabel() {
         return (
             <span>
-                {this.props.icon && (
-                    <span
-                        className={bem(bem.element('icon'), 'material-icons')}
-                        title={_isString(this.props.label) ? this.props.label : null}
-                    >
-                        {this.props.icon}
-                    </span>
-                )}
                 {this.props.children}
+                {this.props.arrow && (
+                    <svg
+                        className={bem.element('arrow')}
+                        width='34px'
+                        height='20px'
+                        viewBox='0 0 34 20'
+                        version='1.1'
+                        xmlns='http://www.w3.org/2000/svg'
+                    >
+                        <g
+                            stroke='none'
+                            strokeWidth='1'
+                            fillRule='evenodd'
+                        >
+                            <g
+                                fillRule='nonzero'
+                            >
+                                <g
+                                    transform='translate(3.000000, 2.500000)'
+                                >
+                                    <polygon
+                                        points='0.5 8.5 0.5 6.5 25.9093998 6.5 25.9093998 8.5'
+                                    />
+                                    <polygon
+                                        points='18.34797 2.25819316 19.65203 0.741806838 27.5293056 7.51609642 19.6557452 14.3547335 18.3442548 12.844769 24.4706944 7.52360606'
+                                    />
+                                </g>
+                            </g>
+                        </g>
+                    </svg>
+                )}
             </span>
         );
     }
@@ -82,19 +104,15 @@ export default class ButtonView extends React.PureComponent {
     _getClassName(modifiers) {
         return bem(
             bem.block({
-                color: this.props.color,
                 outline: this.props.outline,
                 size: this.props.size,
                 disabled: this.props.disabled,
                 submitting: this.props.submitting,
+                arrow: this.props.arrow,
+                bordered: this.props.bordered,
                 ...modifiers,
             }),
             this.props.className,
-            !this.props.link && 'btn',
-            this.props.size && 'btn-' + this.props.size,
-            !this.props.link && 'btn-' + (this.props.outline ? 'outline-' : '') + this.props.color,
-            this.props.block && 'btn-block',
-            this.props.link && 'btn-link',
         );
     }
 }

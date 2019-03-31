@@ -1,3 +1,100 @@
-.Button {
+@import '../../../style/helpers/vars';
+@import '../../../style/helpers/mixins';
 
+.ButtonView {
+  $root: &;
+
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  box-sizing: border-box;
+  font-family: $ff-raleway;
+  font-size: 14px;
+  line-height: 1;
+  font-weight: 900;
+  text-transform: uppercase;
+  color: $color-base;
+  white-space: nowrap;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  border-radius: 4px;
+  user-select: none;
+  text-align: center;
+  padding: 18px 32px;
+  box-shadow: 0 2px 4px $brand-blue;
+  background-color: $link-blue;
+  transition: color $anim-duration-long,
+  background-color $anim-duration-long,
+  box-shadow $anim-duration-long,
+  transform $anim-duration-long;
+
+  @include horizontal-phone {
+    min-width: 240px;
+  }
+
+  @media (min-width: $mqw-horizontal-phone) and (max-width: $mqw-desktop) {
+    min-width: 216px;
+  }
+
+  @media (min-width: $mqw-horizontal-phone) and (max-width: $mqw-notebook) {
+    min-width: 192px;
+  }
+
+  @media (min-width: $mqw-horizontal-phone) and (max-width: $mqw-tablet) {
+    min-width: 127px;
+  }
+
+  &:hover {
+    background-color: $link-blue-dark;
+  }
+
+  &:active {
+    box-shadow: 0 1px 3px $brand-blue;
+    transform: translateY(2px);
+  }
+
+  &_bordered {
+    color: $link-blue;
+    text-transform: none;
+    border: 2px solid $link-blue;
+    background-color: $color-base;
+    box-shadow: none;
+
+    &:hover {
+      color: $color-base;
+      background-color: $link-blue;
+    }
+
+    &:active {
+      box-shadow: none;
+    }
+  }
+
+  &_arrow {
+    text-align: left;
+    padding-right: 80px;
+
+    &:hover {
+      #{$root}__arrow {
+        transform: translateX(3px) translateZ(0);
+      }
+    }
+  }
+
+  &_size_small {
+    padding: 15px 30px 14px;
+    font-size: 12px;
+    font-weight: 800;
+  }
+
+  &__arrow {
+    position: absolute;
+    top: 50%;
+    margin-top: -10px;
+    right: 22px;
+    fill: currentColor;
+    transition: transform $anim-duration-long $anim-timing-func-ease-i-out-sine;
+    width: 34px;
+  }
 }
