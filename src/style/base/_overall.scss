@@ -35,6 +35,7 @@ input[type="search"] {
 a {
   text-decoration: none;
   color: $link-blue;
+  transition: color $anim-duration-long;
 
   &:visited {
     color: $link-blue;

@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "json-loader": "^0.5.7",
+    "react-headroom": "^2.2.8",
     "yii-steroids": "^1.7.10"
   },
   "devDependencies": {

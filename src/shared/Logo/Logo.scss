@@ -1,0 +1,9 @@
+@import '../../style/helpers/vars';
+
+.Logo {
+  display: block;
+
+  &__icon-bg {
+    fill: $brand-yellow;
+  }
+}
