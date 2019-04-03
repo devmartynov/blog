@@ -52,6 +52,12 @@
   }
 }
 
+@mixin notebook-down {
+  @media screen and (max-width: #{$mqw-notebook - 1}) {
+    @content;
+  }
+}
+
 @mixin desktop {
   @media screen and (min-width: #{$mqw-desktop}) {
     @content;

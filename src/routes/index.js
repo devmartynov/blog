@@ -1,4 +1,5 @@
 import RoutesEnum from '../enums/RoutesEnum';
+import LayoutEnum from '../enums/LayoutEnum';
 
 import MainPage from './MainPage';
 import ArticlesPage from './ArticlesPage';
@@ -13,6 +14,7 @@ export default {
     component: MainPage,
     label: RoutesEnum.getLabel(RoutesEnum.MAIN),
     title: RoutesEnum.getLabel(RoutesEnum.MAIN),
+    layout: LayoutEnum.NO_FOOTER,
     items: [
         {
             id: RoutesEnum.ARTICLES,
