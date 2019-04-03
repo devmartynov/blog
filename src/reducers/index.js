@@ -6,8 +6,8 @@ import config from 'yii-steroids/reducers/config';
 import notifications from 'yii-steroids/reducers/notifications';
 import modal from 'yii-steroids/reducers/modal';
 import routing from 'yii-steroids/reducers/routing';
+import navigation from 'yii-steroids/reducers/navigation';
 
-import navigation from './navigation';
 
 export default asyncReducers => combineReducers({
     form,

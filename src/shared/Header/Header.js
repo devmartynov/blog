@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import {openModal, closeModal} from 'yii-steroids/actions/modal';
+import { getNavItems } from 'yii-steroids/reducers/navigation';
 import Headroom from 'react-headroom';
 
 import { html } from 'components';
@@ -10,7 +11,6 @@ import Hamburger from 'shared/Hamburger';
 import MeLink from 'shared/MeLink';
 import HeaderMenuModal from './views/HeaderMenuModal';
 import HeaderNavigationView from './views/HeaderNavigationView';
-import { getNavItems } from 'reducers/navigation';
 import RoutesEnum from 'enums/RoutesEnum';
 import NavItemSchema from 'types/NavItemSchema';
 
