@@ -1,8 +1,10 @@
 import RoutesEnum from '../enums/RoutesEnum';
 import LayoutEnum from '../enums/LayoutEnum';
+import {Redirect} from 'react-router';
 
 import MainPage from './MainPage';
 import ArticlesPage from './ArticlesPage';
+import ArticlePage from './ArticlePage';
 import NotesPage from './NotesPage';
 import ContactsPage from './ContactsPage';
 import AboutMePage from './AboutMePage';
@@ -20,9 +22,47 @@ export default {
             id: RoutesEnum.ARTICLES,
             exact: true,
             path: '/articles',
-            component: ArticlesPage,
+            component: Redirect,
+            componentProps: {
+                to: '/articles/development'
+            },
             label: RoutesEnum.getLabel(RoutesEnum.ARTICLES),
             title: RoutesEnum.getLabel(RoutesEnum.ARTICLES),
+            items: [
+                {
+                    id: RoutesEnum.ARTICLES_DEVELOPMENT,
+                    exact: true,
+                    path: '/articles/development',
+                    component: ArticlesPage,
+                    componentProps: {
+                        isLife: false,
+                    },
+                    label: RoutesEnum.getLabel(RoutesEnum.ARTICLES_DEVELOPMENT),
+                    title: RoutesEnum.getLabel(RoutesEnum.ARTICLES_DEVELOPMENT),
+                },
+                {
+                    id: RoutesEnum.ARTICLES_LIFE,
+                    exact: true,
+                    path: '/articles/life',
+                    component: ArticlesPage,
+                    componentProps: {
+                        isLife: true,
+                    },
+                    label: RoutesEnum.getLabel(RoutesEnum.ARTICLES_LIFE),
+                    title: RoutesEnum.getLabel(RoutesEnum.ARTICLES_LIFE),
+                },
+                {
+                    id: RoutesEnum.ARTICLE_ITEM,
+                    exact: true,
+                    path: '/articles/:id(\\w{20,})',
+                    component: ArticlePage,
+                    componentProps: {
+                        isLife: true,
+                    },
+                    label: RoutesEnum.getLabel(RoutesEnum.ARTICLE_ITEM),
+                    title: RoutesEnum.getLabel(RoutesEnum.ARTICLE_ITEM),
+                },
+            ],
         },
         {
             id: RoutesEnum.NOTES,
