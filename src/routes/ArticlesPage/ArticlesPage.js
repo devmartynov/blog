@@ -10,6 +10,9 @@ import RoutesEnum from 'enums/RoutesEnum';
 import NavItemSchema from 'types/NavItemSchema';
 import ArticleCard from 'shared/ArticleCard';
 
+//static data
+import items from '../../static/data/articles';
+
 import './ArticlesPage.scss';
 
 const bem = html.bem('ArticlesPage');
@@ -38,7 +41,8 @@ export default class ArticlesPage extends React.PureComponent {
                 <NavTabs navItems={this.props.navItems || []}>
                     <List
                         listId={getListId(this.props.isLife)}
-                        action={getAction(this.props.isLife)}
+                        //action={getAction(this.props.isLife)}
+                        items={items}
                         itemView={ArticleCard}
                         itemProps={{
                             isArticle: true,
