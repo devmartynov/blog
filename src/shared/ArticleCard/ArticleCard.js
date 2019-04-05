@@ -16,6 +16,7 @@ export default class ArticleCard extends React.PureComponent {
         item: ArticleSchema,
         isArticle: PropTypes.bool,
         isSocilasButtons: PropTypes.bool,
+        className: PropTypes.string,
     };
 
     render() {
@@ -23,23 +24,44 @@ export default class ArticleCard extends React.PureComponent {
             return null;
         }
 
+        // TODO: copy to clipboard
+        // TODO: dateFormatter
+        // TODO: we should get categories when app loads first time, then set to redux
         return (
-            <article className={bem.block()}>
+            <article className={bem(bem.block(), this.props.className)}>
                 <h2 className={bem.element('title')}>
                     {this.props.item.title}
                 </h2>
+                {this.props.isArticle && (
+                    <ul className={bem.element('categories')}>
+                        {this.props.item.categoriesIds.map(category => (
+                            <li
+                                key={category}
+                                className={bem.element('categories-item')}
+                            >
+                                <a
+                                    className={bem.element('categories-link')}
+                                    href=""
+                                >
+                                    {category}
+                                </a>
+                            </li>
+                        ))}
+                    </ul>
+                )}
                 {!this.props.isArticle && (
                     <p className={bem.element('subtitle')}>
                         {this.props.item.subtitle}
                     </p>
                 )}
                 <p className={bem.element('annotation')}>
-                    {this.props.item.annotaion}
+                    {this.props.item.annotation}
                 </p>
                 <div className={bem.element('footer')}>
                     <div className={bem.element('footer-left')}>
                         {this.props.isArticle && (
                             <Link
+                                className={bem.element('read-link')}
                                 label={__('Читать дальше')}
                                 pageId={RoutesEnum.ARTICLE_ITEM}
                                 params={{
@@ -53,15 +75,17 @@ export default class ArticleCard extends React.PureComponent {
                         )}
                     </div>
                     <div className={bem.element('footer-right')}>
-                        <Link
-                            label={__('Скопировать ссылку')}
-                            onClick={() => console.log('copy')} // TODO: copy to clipboard
-                        />
+                        <button
+                            className={bem.element('copy-link')}
+                            onClick={() => console.log('copy')}
+                        >
+                            {__('Скопировать ссылку')}
+                        </button>
                         <time
                             className={bem.element('create-date')}
-                            dateTime={this.props.createdAt}
+                            dateTime={this.props.item.createdAt}
                         >
-                            {this.props.createdAt} // TODO: dateFormatter
+                            {this.props.item.createdAt}
                         </time>
                     </div>
                 </div>

@@ -11,8 +11,6 @@ import './style/index.scss';
 // Import views
 ui.addViews(require.context('./ui', true, /View.js$/));
 ui.addViews({
-    'nav.NavTabsView': require('yii-steroids/ui/nav/Nav/NavTabsView').default,
-    'list.ListView': require('yii-steroids/ui/list/List/ListView').default,
 });
 
 @hot(module)

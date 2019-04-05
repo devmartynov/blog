@@ -8,13 +8,26 @@ $brand-yellow: #FFF45F;
 $brand-black: #151515;
 
 // text colors
-$text-white: #FFF;
+$text-white: #fff;
+$text-grey-lightest: #f1f1f1;
+$text-grey-more-light: #f9f9f9;
 $text-grey-light: #E0E0E0;
 $text-grey: #9E9E9E;
 $text-grey-dark: #737373;
 $text-grey-darker: #616161;
 $text-grey-darkest: #212121;
 $text-black: #151515;
+
+// grey color gradation
+$color-gg-1: #f1f1f1;
+$color-gg-2: #f9f9f9;
+$color-gg-3: #e0e0e0;
+$color-gg-4: #c1c1c0;
+$color-gg-5: #9e9e9e;
+$color-gg-6: #737373;
+$color-gg-7: #616161;
+$color-gg-8: #212121;
+$color-gg-9: #151515;
 
 // links colors
 $link-blue-light: #9DC4FF;

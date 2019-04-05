@@ -24,7 +24,7 @@ const ArticleSchema = PropTypes.shape({
         updatedAt: PropTypes.string,
         content: PropTypes.string,
         author: PropTypes.shape({
-            id: PropTypes.string,
+            id: PropTypes.number,
             name: PropTypes.string,
         })
     }))

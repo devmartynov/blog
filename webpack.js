@@ -26,6 +26,7 @@ require('yii-steroids/webpack')
                     shared: __dirname + '/src/shared',
                     types: __dirname + '/src/types',
                     ui: __dirname + '/src/ui',
+                    static: __dirname + '/src/static',
                 },
             },
         },
