@@ -25,14 +25,19 @@ export default class Link extends React.PureComponent {
             <a
                 className={this.props.className}
                 href={this.props.url}
-                onClick={e => {
-                    onLinkClick(e, this.props.url);
-                    this.props.onClick && this.props.onClick(e);
-                }}
+                onClick={e => this._onClick(e)}
             >
                 {this.props.label || this.props.children}
             </a>
         );
+    }
+
+    _onClick(e) {
+        if (this.props.onClick) {
+            return this.props.onClick(e);
+        }
+
+        return onLinkClick(e, this.props.url);
     }
 
 }
