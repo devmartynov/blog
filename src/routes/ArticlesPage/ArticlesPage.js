@@ -14,7 +14,7 @@ import './ArticlesPage.scss';
 
 const bem = html.bem('ArticlesPage');
 const getListId = isLife => isLife ? 'list_articles_life' : 'list_articles_development';
-const getAction = isLife => isLife ? '/articles/?type=life' : '/articles/?type=development';
+const getAction = isLife => isLife ? '/articles?type=life' : '/articles?type=development';
 
 @connect(
     (state, props) => ({
@@ -45,7 +45,7 @@ export default class ArticlesPage extends React.PureComponent {
                             isSocilasButtons: false,
                         }}
                         defaultPageSize={5}
-                        emptyText={__('Здесь пока нет ниодной записи.')}
+                        emptyView={() => <div>{__('Здесь пока нет ниодной записи.')}</div>}
                     />
                 </NavTabs>
             </section>
