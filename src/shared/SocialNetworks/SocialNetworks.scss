@@ -9,20 +9,6 @@
   padding: 0;
   list-style: none;
 
-  &_color {
-    &_white {
-      #{$root}__icon {
-        fill: $color-base;
-      }
-    }
-
-    &_black {
-      #{$root}__icon {
-        fill: $brand-black;
-      }
-    }
-  }
-
   &__link {
     display: inline-block;
     box-sizing: border-box;
@@ -37,15 +23,13 @@
     }
 
     &:hover {
-      #{$root}__icon {
+      #{$root}__icon path {
         fill: $link-blue;
       }
     }
   }
 
-  &__icon {
-    width: 100%;
-    height: 100%;
+  &__icon path {
     transition: fill $anim-duration-long;
   }
 }
