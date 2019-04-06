@@ -1,0 +1,54 @@
+@import "../../../style/helpers/vars";
+@import "../../../style/helpers/mixins";
+
+.NavTabsView {
+
+  &__items {
+    margin: 0 0 32px;
+    padding: 0;
+    list-style: none;
+  }
+
+  &__item {
+    display: inline-block;
+    vertical-align: top;
+    margin-right: 16px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  &__link {
+    display: inline-block;
+    font-size: 14px;
+    padding: 8px 16px;
+    color: $text-black;
+    background-color: $color-base;
+    line-height: 1;
+    cursor: pointer;
+    border-radius: 2px;
+    z-index: 10;
+    user-select: none;
+    transition: $anim-duration-long;
+
+    &:hover {
+      background-color: $text-grey-lightest;
+      color: $text-black;
+      cursor: pointer;
+    }
+
+    &:visited {
+      color: $text-black;
+    }
+
+    &_active {
+      background-color: $brand-yellow;
+
+      &:hover {
+        background-color: $brand-yellow;
+        cursor: default;
+      }
+    }
+  }
+}

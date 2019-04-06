@@ -1,3 +1,17 @@
+@import "./../../style/helpers/vars";
+@import "./../../style/helpers/mixins";
+
 .ArticlesPage {
-  
+  padding-top: 44px;
+  padding-bottom: 44px;
+  background-color: $text-grey-more-light;
+
+  &__title {
+    font-weight: 900;
+    font-size: 42px;
+    line-height: 1;
+    margin-top: 0;
+    margin-bottom: 32px;
+    margin-left: 16px;
+  }
 }

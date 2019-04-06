@@ -31,7 +31,17 @@ const instances = {
 };
 
 // Apply configuration
-const customConfig = instances.store.getState().config || {};
+const customConfig = {
+    http: {
+        apiUrl: config.apiUrl,
+    },
+    store: {
+        history: {
+            basename: '/'
+        },
+    },
+    ...instances.store.getState().config,
+};
 Object.keys(instances).forEach(name => {
     _merge(
         instances[name],

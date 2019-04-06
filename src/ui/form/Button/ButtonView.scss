@@ -46,6 +46,7 @@
   }
 
   &:hover {
+    color: $color-base;
     background-color: $link-blue-dark;
   }
 
@@ -54,11 +55,15 @@
     transform: translateY(2px);
   }
 
+  &:visited {
+    color: $color-base;
+  }
+
   &_bordered {
     color: $link-blue;
     text-transform: none;
     border: 2px solid $link-blue;
-    background-color: $color-base;
+    background-color: transparent;
     box-shadow: none;
 
     &:hover {

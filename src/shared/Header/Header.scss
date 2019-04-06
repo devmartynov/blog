@@ -3,6 +3,7 @@
 
 .Header {
   height: 56px;
+  background-color: $color-base;
 
   @include horizontal-phone {
     height: 76px;
@@ -62,7 +63,14 @@
     }
   }
 
-  &__me-link_hidden {
-    opacity: 0;
+  &__me-link {
+
+    @include small-phone {
+      position: absolute;
+    }
+
+    &_hidden {
+      opacity: 0;
+    }
   }
 }

@@ -10,6 +10,8 @@ import './style/index.scss';
 
 // Import views
 ui.addViews(require.context('./ui', true, /View.js$/));
+ui.addViews({
+});
 
 @hot(module)
 export default class Application extends React.PureComponent {
