@@ -32,7 +32,7 @@ export default {
                 {
                     id: RoutesEnum.ARTICLES_DEVELOPMENT,
                     exact: true,
-                    path: '/articles/development',
+                    path: '/articles/dev',
                     component: ArticlesPage,
                     componentProps: {
                         isLife: false,
@@ -54,7 +54,7 @@ export default {
                 {
                     id: RoutesEnum.ARTICLE_ITEM,
                     exact: true,
-                    path: '/articles/:id(\\w{20,})',
+                    path: '/articles/:type?/:id(\\w{2,})',
                     component: ArticlePage,
                     componentProps: {
                         isLife: true,

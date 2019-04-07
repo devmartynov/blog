@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import TimeLeftFormatter from 'ui/format/TimeLeftFormatter';
 
 import {html} from 'components';
 import ArticleSchema from 'types/ArticleSchema';
@@ -25,12 +26,14 @@ export default class ArticleCard extends React.PureComponent {
         }
 
         // TODO: copy to clipboard
-        // TODO: dateFormatter
         // TODO: we should get categories when app loads first time, then set to redux
         return (
             <article className={bem(bem.block(), this.props.className)}>
                 <h2 className={bem.element('title')}>
-                    {this.props.item.title}
+                    <Link
+                        label={this.props.item.title}
+                        url={this.props.item.slug}
+                    />
                 </h2>
                 {this.props.isArticle && (
                     <ul className={bem.element('categories')}>
@@ -41,7 +44,7 @@ export default class ArticleCard extends React.PureComponent {
                             >
                                 <a
                                     className={bem.element('categories-link')}
-                                    href=""
+                                    href='1'
                                 >
                                     {category}
                                 </a>
@@ -49,7 +52,7 @@ export default class ArticleCard extends React.PureComponent {
                         ))}
                     </ul>
                 )}
-                {!this.props.isArticle && (
+                {this.props.isArticle && (
                     <p className={bem.element('subtitle')}>
                         {this.props.item.subtitle}
                     </p>
@@ -65,7 +68,7 @@ export default class ArticleCard extends React.PureComponent {
                                 label={__('Читать дальше')}
                                 pageId={RoutesEnum.ARTICLE_ITEM}
                                 params={{
-                                    id: this.props.item.id,
+                                    id: this.props.item.slug,
                                 }}
                             />
                         ) || (
@@ -85,7 +88,9 @@ export default class ArticleCard extends React.PureComponent {
                             className={bem.element('create-date')}
                             dateTime={this.props.item.createdAt}
                         >
-                            {this.props.item.createdAt}
+                            <TimeLeftFormatter
+                                value={this.props.item.createdAt}
+                            />
                         </time>
                     </div>
                 </div>

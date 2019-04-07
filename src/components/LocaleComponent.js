@@ -4,5 +4,7 @@ export default class LocaleComponent extends BaseLocaleComponent {
 
     constructor() {
         super();
+
+        this.language = 'ru';
     }
 }
