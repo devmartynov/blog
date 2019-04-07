@@ -19,6 +19,14 @@ $font-dir: '../static/fonts';
 
 @font-face {
   font-family: 'Raleway';
+  font-weight: 600;
+  font-style: normal;
+  src: url('#{$font-dir}/Raleway-SemiBold.woff2') format('woff2'),
+  url('#{$font-dir}/Raleway-SemiBold.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Raleway';
   font-weight: 800;
   font-style: normal;
   src: url('#{$font-dir}/Raleway-ExtraBold.woff2') format('woff2'),
