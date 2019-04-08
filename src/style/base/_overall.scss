@@ -56,6 +56,11 @@ a {
   margin: 0 auto;
   box-sizing: border-box;
 
+  @include horizontal-phone {
+    padding-left: $grid-offset-horizontal-phone;
+    padding-right: $grid-offset-horizontal-phone;
+  }
+
   @include tablet {
     padding-left: $grid-offset-tablet;
     padding-right: $grid-offset-tablet;

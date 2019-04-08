@@ -7,6 +7,12 @@
   margin-left: -$grid-offset-small-phone;
   margin-right: -$grid-offset-small-phone;
 
+  @include horizontal-phone {
+    padding: 32px 50px;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
   &__title {
     margin-top: 0;
     margin-left: -0.07em;
@@ -14,6 +20,22 @@
     font-weight: 900;
     line-height: 1.1;
     font-size: 28px;
+
+    @include horizontal-phone {
+      font-size: 45px;
+    }
+
+    a {
+      color: $text-black;
+
+      &:hover {
+        color: $brand-blue;
+      }
+
+      &:visited {
+        color: $text-black;
+      }
+    }
   }
 
   &__categories {
@@ -29,10 +51,14 @@
   }
 
   &__categories-link {
-    color: $text-grey;
+    color: $color-gg-4;
+
+    &:hover {
+      color: $brand-blue;
+    }
 
     &:visited {
-      color: $text-grey;
+      color: $color-gg-4;
     }
   }
 
@@ -41,18 +67,27 @@
     margin-bottom: 1em;
     line-height: 1.5;
     font-size: 20px;
+    font-weight: 600;
   }
 
   &__annotation {
     line-height: 1.5;
     font-size: 16px;
     margin-top: 0;
+
+    @include horizontal-phone {
+      font-size: 18px;
+    }
   }
 
   &__footer {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+
+    @include horizontal-phone {
+      flex-direction: row;
+    }
   }
 
   &__footer-left {
@@ -62,10 +97,15 @@
   &__read-link {
     font-weight: 800;
     padding: 5px 0;
+
+    @include horizontal-phone {
+      font-size: 18px;
+    }
   }
 
   &__copy-link {
     display: inline-block;
+    font-family: $ff-raleway;
     color: $color-gg-4;
     border: none;
     background-color: transparent;
