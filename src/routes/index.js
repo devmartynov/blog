@@ -24,7 +24,7 @@ export default {
             path: '/articles',
             component: Redirect,
             componentProps: {
-                to: '/articles/development'
+                to: '/articles/dev'
             },
             label: RoutesEnum.getLabel(RoutesEnum.ARTICLES),
             title: RoutesEnum.getLabel(RoutesEnum.ARTICLES),
