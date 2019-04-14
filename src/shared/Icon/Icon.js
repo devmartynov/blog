@@ -45,6 +45,7 @@ import TwitterIcon from './TwitterIcon';
 import UploadIcon from './UploadIcon';
 import VolumeIcon from './VolumeIcon';
 import ZoomIcon from './ZoomIcon';
+import EyeIcon from './EyeIcon';
 
 export default class Icon extends React.PureComponent {
 
@@ -140,6 +141,8 @@ export default class Icon extends React.PureComponent {
                 return <VolumeIcon {...this.props}/>;
             case 'zoom':
                 return <ZoomIcon {...this.props}/>;
+            case 'eye':
+                return <EyeIcon {...this.props}/>;
             default:
                 return null;
         }
