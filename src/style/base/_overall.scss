@@ -7,6 +7,16 @@
   color: $text-black;
 }
 
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
 html,
 body {
   min-height: 100%;
