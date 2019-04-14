@@ -81,7 +81,7 @@ export default class PopularBlock extends React.PureComponent {
                             {this.props.withCount && (
                                 <div
                                     className={bem.element('count')}
-                                    aria-label={__('Количество записей')}
+                                    aria-label={__('Количество просмотров')}
                                 >
                                     {item.count}
                                     <Icon
