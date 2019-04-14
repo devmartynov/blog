@@ -1,0 +1,70 @@
+@import '../../../style/helpers/vars';
+@import '../../../style/helpers/mixins';
+
+.FieldLayoutView {
+  border: none;
+  padding: 0;
+  margin: 0;
+
+  &__label {
+    margin-bottom: 5px;
+    display: block;
+    color: $color-gg-3;
+    min-height: 20px; //line-height for empty label ('')
+
+    &_required:after {
+      display: inline-block;
+      content: '*';
+      color: $red;
+      margin: 0 0 0 3px;
+    }
+
+    &_disabled {
+      //color: $color-gg-6;
+      opacity: $disabled-opacity;
+    }
+
+    &_is-filter {
+      font-size: 14px;
+      line-height: 20px;
+      color: $brand-blue;
+      letter-spacing: 0.3px;
+      font-weight: bold;
+      margin-bottom: 20px;
+      padding-left: 16px;
+
+      @include tablet {
+        padding: 0 24px;
+        margin-bottom: 16px;
+      }
+
+      @include desktop {
+        padding: 0 16px;
+        margin-bottom: 14px;
+      }
+    }
+  }
+  &__invalid-feedback {
+    display: block !important;
+    padding-top: 12px;
+  }
+
+  &__error {
+    display: flex;
+    align-items: center;
+  }
+
+  &__error-icon {
+    margin-right: 16px;
+  }
+
+  &__hint {
+    width: 100%;
+    margin-top: .25rem;
+    font-size: 80%;
+  }
+
+  &__field {
+    margin-bottom: 16px;
+  }
+}
