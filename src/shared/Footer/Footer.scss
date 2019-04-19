@@ -7,17 +7,21 @@
   color: $color-base;
   margin: 0 auto;
   box-sizing: border-box;
-  padding: 80px 16px 32px;
+  padding: 32px 16px 40px;
   overflow: hidden;
 
-  @include horizontal-phone-down {
-    padding-top: 32px;
-    padding-bottom: 40px;
+  @include horizontal-phone {
+    padding-right: 64px;
+    padding-left: 64px;
   }
 
-  @include notebook-down {
-    padding-left: 21px;
-    padding-right: 21px;
+  @include tablet {
+    padding-right: 16px;
+    padding-left: 16px;
+  }
+
+  @include notebook {
+    padding: 80px 56px 32px;
   }
 
   &__top {
