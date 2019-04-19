@@ -1,16 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { html } from 'components';
-import Modal from 'ui/modal/Modal';
+import { html } from 'components/index';
+import Modal from 'ui/modal/Modal/index';
 import NavItemSchema from 'types/NavItemSchema';
-import Link from 'shared/Link';
+import Link from 'shared/Link/index';
 
-import './HeaderMenuModal.scss';
+import './Menu.scss';
 
-const bem = html.bem('HeaderMenuModal');
+const bem = html.bem('Menu');
 
-export default class HeaderMenuModal extends React.PureComponent {
+export default class Menu extends React.PureComponent {
 
     static propTypes = {
         navItems: PropTypes.arrayOf(NavItemSchema),

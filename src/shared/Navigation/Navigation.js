@@ -1,15 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { html } from 'components';
-import Link from 'shared/Link';
+import { html } from 'components/index';
+import Link from 'shared/Link/index';
 import NavItemSchema from 'types/NavItemSchema';
 
-import './HeaderNavigationView.scss';
+import './Navigation.scss';
 
-const bem = html.bem('HeaderNavigationView');
+const bem = html.bem('Navigation');
 
-export default class HeaderNavigationView extends React.PureComponent {
+export default class Navigation extends React.PureComponent {
 
     static propTypes = {
         navItems: PropTypes.arrayOf(NavItemSchema),

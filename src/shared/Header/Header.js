@@ -9,8 +9,8 @@ import { html } from 'components';
 import Logo from 'shared/Logo';
 import Hamburger from 'shared/Hamburger';
 import MeLink from 'shared/MeLink';
-import HeaderMenuModal from './views/HeaderMenuModal';
-import HeaderNavigationView from './views/HeaderNavigationView';
+import Menu from 'shared/Menu/Menu';
+import Navigation from 'shared/Navigation/Navigation';
 import RoutesEnum from 'enums/RoutesEnum';
 import NavItemSchema from 'types/NavItemSchema';
 
@@ -49,7 +49,7 @@ export default class Header extends React.PureComponent {
                         </div>
                         <div className={bem.element('content')}>
                             <div className={bem.element('content-inner')}>
-                                <HeaderNavigationView
+                                <Navigation
                                     className={bem.element('nav', {hidden: this.state.isMenuOpen})}
                                     navItems={this.props.navItems}
                                 />
@@ -67,7 +67,7 @@ export default class Header extends React.PureComponent {
         if (this.state.isMenuOpen) {
             this.props.dispatch(closeModal());
         } else {
-            this.props.dispatch(openModal(HeaderMenuModal, {
+            this.props.dispatch(openModal(Menu, {
                 navItems: this.props.navItems.filter(item => item.id !== RoutesEnum.CONTACTS),
             }));
         }
