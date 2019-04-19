@@ -55,9 +55,15 @@ export default class Header extends React.PureComponent {
                                 <MeLink className={bem.element('me-link', {hidden: this.state.isMenuOpen})}/>
                             </div>
                         </div>
-                        <Hamburger onClick={this.onHamburgerClick}/>
+                        <Hamburger
+                            isOpen={this.state.isMenuOpen}
+                            onClick={this.onHamburgerClick}
+                        />
                         {this.state.isMenuOpen && (
-                            <Menu navItems={this.props.navItems.filter(item => item.id !== RoutesEnum.CONTACTS)}/>
+                            <Menu
+                                navItems={this.props.navItems.filter(item => item.id !== RoutesEnum.CONTACTS)}
+                                closeMenu={this.onHamburgerClick}
+                            />
                         )}
                     </div>
                 </header>
@@ -65,15 +71,14 @@ export default class Header extends React.PureComponent {
         );
     }
 
+    //TODO: fix overflow
     onHamburgerClick() {
         this.setState({isMenuOpen: !this.state.isMenuOpen}, () => {
             const body = document.querySelector('body');
-            const layout = document.querySelector('.Layout');
 
             // prevent user scrolling
             if (this.state.isMenuOpen) {
                 body.style.overflow = 'hidden';
-                layout.style.overflow = 'auto';
             } else {
                 body.style.overflow = 'visible';
             }
