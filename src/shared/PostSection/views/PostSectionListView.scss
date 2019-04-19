@@ -1,0 +1,58 @@
+@import "../../../style/helpers/vars";
+@import "../../../style/helpers/mixins";
+
+.PostSectionListView {
+  &__inner {
+    @include tablet {
+      display: flex;
+    }
+  }
+
+  &__main-content {
+    @include tablet {
+      width: 70%;
+      flex-grow: 1;
+      margin-right: 40px;
+    }
+  }
+
+  &__list {
+    position: relative;
+    min-height: 300px;
+    margin: 0 -16px 24px;
+
+    @include horizontal-phone {
+      margin-left: 0;
+      margin-right: 0;
+    }
+  }
+
+  &__item {
+    margin-bottom: 16px;
+  }
+
+  &__pagination-more {
+    width: 100%;
+
+    @include tablet {
+      margin-bottom: 24px;
+    }
+  }
+
+  &__pagination-size {
+    margin-left: auto;
+    position: relative;
+    top: 15px;
+  }
+
+  &__sidebar {
+    max-width: 320px;
+    display: none;
+
+    @include tablet {
+      width: 30%;
+      display: block;
+      margin-left: auto;
+    }
+  }
+}

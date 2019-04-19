@@ -1,11 +1,9 @@
 @import "../../style/helpers/vars";
 @import "../../style/helpers/mixins";
 
-.ArticleCard {
+.PostCard {
   padding: 24px 16px;
   background-color: $color-base;
-  margin-left: -$grid-offset-small-phone;
-  margin-right: -$grid-offset-small-phone;
 
   @include horizontal-phone {
     padding: 32px 50px;

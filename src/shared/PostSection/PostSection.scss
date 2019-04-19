@@ -1,0 +1,47 @@
+@import "./../../style/helpers/vars";
+@import "./../../style/helpers/mixins";
+
+.PostSection {
+  width: 100%;
+  padding: 44px 16px;
+  background-color: $text-grey-more-light;
+
+  @include horizontal-phone {
+    padding-right: 64px;
+    padding-left: 64px;
+  }
+
+  @include tablet {
+    padding-right: 16px;
+    padding-left: 16px;
+  }
+
+  @include notebook {
+    padding-top: 104px;
+    padding-right: 56px;
+    padding-left: 56px;
+  }
+
+  &__inner {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  &__title {
+    font-weight: 900;
+    font-size: 42px;
+    line-height: 1;
+    margin-top: 0;
+    margin-bottom: 32px;
+
+    @include horizontal-phone {
+      font-size: 64px;
+      line-height: 1.1;
+      margin-bottom: 32px;
+    }
+
+    @include tablet {
+      margin-left: 120px;
+    }
+  }
+}

@@ -7,11 +7,11 @@ import ArticleSchema from 'types/ArticleSchema';
 import Link from 'shared/Link';
 import RoutesEnum from 'enums/RoutesEnum';
 
-import './ArticleCard.scss';
+import './PostCard.scss';
 
-const bem = html.bem('ArticleCard');
+const bem = html.bem('PostCard');
 
-export default class ArticleCard extends React.PureComponent {
+export default class PostCard extends React.PureComponent {
 
     static propTypes = {
         item: ArticleSchema,
