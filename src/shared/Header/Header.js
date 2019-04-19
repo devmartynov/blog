@@ -1,7 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import {openModal, closeModal} from 'yii-steroids/actions/modal';
 import { getNavItems } from 'yii-steroids/reducers/navigation';
 import Headroom from 'react-headroom';
 
@@ -57,6 +56,9 @@ export default class Header extends React.PureComponent {
                             </div>
                         </div>
                         <Hamburger onClick={this.onHamburgerClick}/>
+                        {this.state.isMenuOpen && (
+                            <Menu navItems={this.props.navItems.filter(item => item.id !== RoutesEnum.CONTACTS)}/>
+                        )}
                     </div>
                 </header>
             </Headroom>
@@ -64,14 +66,17 @@ export default class Header extends React.PureComponent {
     }
 
     onHamburgerClick() {
-        if (this.state.isMenuOpen) {
-            this.props.dispatch(closeModal());
-        } else {
-            this.props.dispatch(openModal(Menu, {
-                navItems: this.props.navItems.filter(item => item.id !== RoutesEnum.CONTACTS),
-            }));
-        }
+        this.setState({isMenuOpen: !this.state.isMenuOpen}, () => {
+            const body = document.querySelector('body');
+            const layout = document.querySelector('.Layout');
 
-        this.setState({isMenuOpen: !this.state.isMenuOpen});
+            // prevent user scrolling
+            if (this.state.isMenuOpen) {
+                body.style.overflow = 'hidden';
+                layout.style.overflow = 'auto';
+            } else {
+                body.style.overflow = 'visible';
+            }
+        });
     }
 }

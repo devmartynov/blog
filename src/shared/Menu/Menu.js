@@ -1,8 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { html } from 'components/index';
-import Modal from 'ui/modal/Modal/index';
+import {html} from 'components/index';
 import NavItemSchema from 'types/NavItemSchema';
 import Link from 'shared/Link/index';
 
@@ -18,9 +17,8 @@ export default class Menu extends React.PureComponent {
 
     render() {
         return (
-            <Modal
+            <div
                 className={bem.block()}
-                overlay={bem.element('overlay')}
             >
                 <ul className={bem.element('menu')}>
                     <li className={bem.element('menu-item')}>
@@ -85,7 +83,7 @@ export default class Menu extends React.PureComponent {
                         </ul>
                     </li>
                 </ul>
-            </Modal>
+            </div>
         );
     }
 }

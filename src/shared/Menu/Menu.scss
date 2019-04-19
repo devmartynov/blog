@@ -2,11 +2,20 @@
 @import '../../style/helpers/mixins';
 
 .Menu {
+  position: fixed;
+  top: 56px;
+  left: 0;
   padding: 24px 16px 64px;
-  outline: none;
+  background-color: $color-base;
+  width: 100%;
+  min-height: 100vh;
 
   @include horizontal-phone {
     padding: 180px 16px;
+  }
+
+  &__inner {
+
   }
 
   .ModalView__content {
