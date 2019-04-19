@@ -16,12 +16,18 @@
   }
 
   @include tablet {
+    padding-top: 40px;
     padding-right: 16px;
     padding-left: 16px;
   }
 
   @include notebook {
     padding: 80px 56px 32px;
+  }
+
+  &__inner {
+    max-width: 1200px;
+    margin: 0 auto;
   }
 
   &__top {
@@ -50,10 +56,15 @@
     line-height: 1;
     margin-bottom: 14px;
 
+    @include horizontal-phone {
+      font-size: 18px;
+      margin-bottom: 24px;
+    }
+
     @include tablet {
-      font-size: 28px;
+      font-size: 25px;
       font-weight: 800;
-      margin-bottom: 26px;
+      margin-bottom: 32px;
     }
   }
 
