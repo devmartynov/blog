@@ -66,7 +66,7 @@ export default class PostCard extends React.PureComponent {
                             <Link
                                 className={bem.element('read-link')}
                                 label={__('Читать дальше')}
-                                pageId={RoutesEnum.ARTICLE_ITEM}
+                                pageId={RoutesEnum.BLOG_POST}
                                 params={{
                                     id: this.props.item.slug,
                                 }}
