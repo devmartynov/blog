@@ -1,26 +1,25 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {connect} from 'react-redux';
-import {push} from 'react-router-redux';
+import { connect } from 'react-redux';
+import { push } from 'react-router-redux';
 import _get from 'lodash-es/get';
 
-import {html} from 'components';
+import { html } from 'components';
 import Nav from 'ui/nav/Nav';
-import RoutesEnum from 'enums/RoutesEnum';
 import NavItemSchema from 'types/NavItemSchema';
 import PostCard from 'shared/PostCard';
-import PostSectionListView from './views/PostSectionListView';
+import PostsListView from './views/PostsListView';
 import List from 'ui/list/List';
 
 //static data
-import {articlesDev, articlesLife} from 'static/data/articles';
+import { articlesDev, articlesLife } from 'static/data/articles';
 
-import './PostSection.scss';
+import './PostsSection.scss';
 
-const bem = html.bem('PostSection');
+const bem = html.bem('PostsSection');
 
 @connect()
-export default class PostSection extends React.PureComponent {
+export default class PostsSection extends React.PureComponent {
 
     static propTypes = {
         navItems: PropTypes.arrayOf(NavItemSchema),
@@ -52,14 +51,12 @@ export default class PostSection extends React.PureComponent {
                             // Timeout for fix setState() call in Nav component
                             setTimeout(() => this.props.dispatch(push(item.url)));
                         }}
-                        items={this.props.navItems
-                            .filter(item => item.id !== RoutesEnum.ARTICLE_ITEM)
-                            .map(item => ({
-                                id: item.id,
-                                label: item.label,
-                                url: item.url,
-                                content: this.getContent()
-                            }))}
+                        items={this.props.navItems.map(item => ({
+                            id: item.id,
+                            label: item.label,
+                            url: item.url,
+                            content: this.getContent(),
+                        }))}
                     />
                 </div>
             </section>
@@ -77,20 +74,20 @@ export default class PostSection extends React.PureComponent {
                 itemProps={{
                     isArticle: this.props.isArticle,
                     isSocilasButtons: this.props.isArticle,
-                    className: 'PostSectionListView__item'
+                    className: 'PostsListView__item',
                 }}
-                view={PostSectionListView}
+                view={PostsListView}
                 defaultPageSize={2}
                 pageSize={2}
                 emptyView={this.getEmptyListMessage}
             />
-        )
+        );
     }
 
     // TODO: better empty block
     getEmptyListMessage() {
         return (
             <div>{__('Здесь пока нет ниодной записи.')}</div>
-        )
+        );
     }
 }

@@ -8,11 +8,11 @@ import PaginationMoreView from 'ui/Pagination/PaginationMoreView';
 import CategoriesBlock from 'shared/CategoriesBlock';
 import PopularBlock from 'shared/PopularBlock';
 
-import './PostSectionListView.scss';
+import './PostsListView.scss';
 
-const bem = html.bem('PostSectionListView');
+const bem = html.bem('PostsListView');
 
-export default class PostSectionListView extends React.PureComponent {
+export default class PostsListView extends React.PureComponent {
 
     static propTypes = {};
 

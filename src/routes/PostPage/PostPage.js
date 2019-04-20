@@ -3,11 +3,11 @@ import PropTypes from 'prop-types';
 
 import {html} from 'components';
 
-import './ArticlePage.scss';
+import './PostPage.scss';
 
-const bem = html.bem('ArticlePage');
+const bem = html.bem('PostPage');
 
-export default class ArticlePage extends React.PureComponent {
+export default class PostPage extends React.PureComponent {
 
     static propTypes = {
 
