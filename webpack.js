@@ -1,3 +1,5 @@
+const CopyWebpackPlugin = require('copy-webpack-plugin');
+
 require('yii-steroids/webpack')
     .config({
         port: 8000,
@@ -29,6 +31,12 @@ require('yii-steroids/webpack')
                     static: __dirname + '/src/static',
                 },
             },
+            plugins: [
+                new CopyWebpackPlugin([{
+                    from: 'src/static/images',
+                    to: 'images'
+                }]),
+            ],
         },
     })
     .base('./src/client.js')

@@ -1,27 +1,28 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import {push} from 'react-router-redux';
 
-import { html } from 'components';
-import Modal from 'ui/modal/Modal';
+import {html} from 'components/index';
 import NavItemSchema from 'types/NavItemSchema';
-import Link from 'shared/Link';
+import Link from 'shared/Link/index';
 
-import './HeaderMenuModal.scss';
+import './Menu.scss';
 
-const bem = html.bem('HeaderMenuModal');
+const bem = html.bem('Menu');
 
-export default class HeaderMenuModal extends React.PureComponent {
+@connect()
+export default class Menu extends React.PureComponent {
 
     static propTypes = {
         navItems: PropTypes.arrayOf(NavItemSchema),
+        closeMenu: PropTypes.func,
     };
 
+    //TODO: links as props component, add more functionality
     render() {
         return (
-            <Modal
-                className={bem.block()}
-                overlay={bem.element('overlay')}
-            >
+            <div className={bem.block()}>
                 <ul className={bem.element('menu')}>
                     <li className={bem.element('menu-item')}>
                         <h3 className={bem.element('menu-label')}>
@@ -32,6 +33,11 @@ export default class HeaderMenuModal extends React.PureComponent {
                                 <li key={item.id}>
                                     <Link
                                         label={item.label}
+                                        onClick={(e) => {
+                                            e.preventDefault();
+                                            this.props.closeMenu();
+                                            this.props.dispatch(push(item.url));
+                                        }}
                                         url={item.url}
                                     />
                                 </li>
@@ -56,17 +62,26 @@ export default class HeaderMenuModal extends React.PureComponent {
                         </h3>
                         <ul>
                             <li>
-                                <a href='https://vk.com/martynov_do'>
+                                <a
+                                    href='https://vk.com/martynov_do'
+                                    target='_blank'
+                                >
                                     {__('Вконтакте')}
                                 </a>
                             </li>
                             <li>
-                                <a href='https://t.me/domartynov'>
+                                <a
+                                    href='https://t.me/domartynov'
+                                    target='_blank'
+                                >
                                     {__('Телеграм')}
                                 </a>
                             </li>
                             <li>
-                                <a href='https://www.facebook.com/profile.php?id=100004142401177'>
+                                <a
+                                    href='https://www.facebook.com/profile.php?id=100004142401177'
+                                    target='_blank'
+                                >
                                     {__('Фэйсбук')}
                                 </a>
                             </li>
@@ -78,14 +93,17 @@ export default class HeaderMenuModal extends React.PureComponent {
                         </h3>
                         <ul>
                             <li>
-                                <a href='https://www.instagram.com/martynov.do'>
+                                <a
+                                    href='https://www.instagram.com/martynov.do'
+                                    target='_blank'
+                                >
                                     {__('Инстаграм')}
                                 </a>
                             </li>
                         </ul>
                     </li>
                 </ul>
-            </Modal>
+            </div>
         );
     }
 }

@@ -13,23 +13,13 @@ export default class Hamburger extends React.PureComponent {
         onClick: PropTypes.func,
     };
 
-    constructor() {
-        super(...arguments);
-
-        this._onClick = this._onClick.bind(this);
-
-        this.state = {
-            isOpen: false,
-        };
-    }
-
 
     render() {
         return (
             <button
-                className={bem.block({ open: this.state.isOpen })}
-                aria-label={this.state.isOpen ? __('Закрыть меню') : __('Открыть меню')}
-                onClick={this._onClick}
+                className={bem.block({ open: this.props.isOpen })}
+                aria-label={this.props.isOpen ? __('Закрыть меню') : __('Открыть меню')}
+                onClick={this.props.onClick}
             >
                 <div
                     className={bem.element('line')}
@@ -46,15 +36,4 @@ export default class Hamburger extends React.PureComponent {
             </button>
         );
     }
-
-    _onClick() {
-        if (this.props.onClick) {
-            this.props.onClick();
-        }
-
-        this.setState({
-            isOpen: !this.state.isOpen,
-        });
-    }
-
 }

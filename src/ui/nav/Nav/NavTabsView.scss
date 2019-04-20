@@ -4,12 +4,16 @@
 .NavTabsView {
 
   &__items {
-    margin: 0 0 32px;
+    margin: 0 0 32px 0;
     padding: 0;
     list-style: none;
 
     @include horizontal-phone {
       margin-bottom: 40px;
+    }
+
+    @include tablet {
+      margin-left: 120px;
     }
   }
 

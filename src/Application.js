@@ -11,6 +11,7 @@ import './style/index.scss';
 // Import views
 ui.addViews(require.context('./ui', true, /View.js$/));
 ui.addViews({
+    'form.FormView': require('yii-steroids/ui/form/Form/FormView').default,
 });
 
 @hot(module)

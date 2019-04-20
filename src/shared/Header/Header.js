@@ -1,7 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import {openModal, closeModal} from 'yii-steroids/actions/modal';
 import { getNavItems } from 'yii-steroids/reducers/navigation';
 import Headroom from 'react-headroom';
 
@@ -9,8 +8,8 @@ import { html } from 'components';
 import Logo from 'shared/Logo';
 import Hamburger from 'shared/Hamburger';
 import MeLink from 'shared/MeLink';
-import HeaderMenuModal from './views/HeaderMenuModal';
-import HeaderNavigationView from './views/HeaderNavigationView';
+import Menu from 'shared/Menu/Menu';
+import Navigation from 'shared/Navigation/Navigation';
 import RoutesEnum from 'enums/RoutesEnum';
 import NavItemSchema from 'types/NavItemSchema';
 
@@ -49,29 +48,40 @@ export default class Header extends React.PureComponent {
                         </div>
                         <div className={bem.element('content')}>
                             <div className={bem.element('content-inner')}>
-                                <HeaderNavigationView
+                                <Navigation
                                     className={bem.element('nav', {hidden: this.state.isMenuOpen})}
                                     navItems={this.props.navItems}
                                 />
                                 <MeLink className={bem.element('me-link', {hidden: this.state.isMenuOpen})}/>
                             </div>
                         </div>
-                        <Hamburger onClick={this.onHamburgerClick}/>
+                        <Hamburger
+                            isOpen={this.state.isMenuOpen}
+                            onClick={this.onHamburgerClick}
+                        />
+                        {this.state.isMenuOpen && (
+                            <Menu
+                                navItems={this.props.navItems.filter(item => item.id !== RoutesEnum.CONTACTS)}
+                                closeMenu={this.onHamburgerClick}
+                            />
+                        )}
                     </div>
                 </header>
             </Headroom>
         );
     }
 
+    //TODO: fix overflow
     onHamburgerClick() {
-        if (this.state.isMenuOpen) {
-            this.props.dispatch(closeModal());
-        } else {
-            this.props.dispatch(openModal(HeaderMenuModal, {
-                navItems: this.props.navItems.filter(item => item.id !== RoutesEnum.CONTACTS),
-            }));
-        }
+        this.setState({isMenuOpen: !this.state.isMenuOpen}, () => {
+            const body = document.querySelector('body');
 
-        this.setState({isMenuOpen: !this.state.isMenuOpen});
+            // prevent user scrolling
+            if (this.state.isMenuOpen) {
+                body.style.overflow = 'hidden';
+            } else {
+                body.style.overflow = 'visible';
+            }
+        });
     }
 }

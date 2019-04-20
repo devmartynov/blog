@@ -76,7 +76,7 @@ $col-width: percentage(100/$col-length)/100;
 }
 
 // cols count
-@for $i from 1 through 12 {
+@for $i from 1 through 8 {
   .col_count-#{$i} {
     width: $col-width * $i;
   }
@@ -97,7 +97,7 @@ $col-width: percentage(100/$col-length)/100;
 }
 
 // cols count - phone
-@for $i from 1 through 12 {
+@for $i from 1 through 8 {
   @include phone {
     .col_phone-count-#{$i} {
       width: $col-width * $i;
@@ -120,7 +120,7 @@ $col-width: percentage(100/$col-length)/100;
 }
 
 // cols count - horizontal phone
-@for $i from 1 through 12 {
+@for $i from 1 through 8 {
   @include horizontal-phone {
     .col_horiz-phone-count-#{$i} {
       width: $col-width * $i;
@@ -143,7 +143,7 @@ $col-width: percentage(100/$col-length)/100;
 }
 
 // cols count - tablet
-@for $i from 1 through 12 {
+@for $i from 1 through 8 {
   @include tablet {
     .col_tablet-count-#{$i} {
       width: $col-width * $i;
@@ -166,7 +166,7 @@ $col-width: percentage(100/$col-length)/100;
 }
 
 // cols count - notebook
-@for $i from 1 through 12 {
+@for $i from 1 through 8 {
   @include notebook {
     .col_notebook-count-#{$i} {
       width: $col-width * $i;
@@ -189,8 +189,8 @@ $col-width: percentage(100/$col-length)/100;
 }
 
 // cols count - desktop
-@for $i from 1 through 12 {
-  $half-col: (100/12)/2;
+@for $i from 1 through 8 {
+  $half-col: (100/8)/2;
   @include desktop {
     .col_desk-count-#{$i} {
       width: $col-width * $i;
@@ -213,13 +213,5 @@ $col-width: percentage(100/$col-length)/100;
       position: relative;
       right: $col-width * $i;
     }
-  }
-}
-
-// TODO: find normal solution
-// fix safari bug
-@include tablet {
-  .col_tablet-count-6 {
-    width: 49.9%;
   }
 }

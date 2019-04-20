@@ -3288,7 +3288,7 @@ bytes@3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/bytes/-/bytes-3.0.0.tgz#d32815404d689699f85a4ea4fa8755dd13a96048"
 
-cacache@^11.0.2:
+cacache@^11.0.2, cacache@^11.3.1:
   version "11.3.2"
   resolved "https://registry.yarnpkg.com/cacache/-/cacache-11.3.2.tgz#2d81e308e3d258ca38125b676b98b2ac9ce69bfa"
   dependencies:
@@ -3862,6 +3862,22 @@ copy-to-clipboard@^3.0.8:
   dependencies:
     toggle-selection "^1.0.3"
 
+copy-webpack-plugin@^5.0.2:
+  version "5.0.2"
+  resolved "https://registry.yarnpkg.com/copy-webpack-plugin/-/copy-webpack-plugin-5.0.2.tgz#56186dfddbf9aa1b29c97fa4c796c1be98870da4"
+  dependencies:
+    cacache "^11.3.1"
+    find-cache-dir "^2.0.0"
+    glob-parent "^3.1.0"
+    globby "^7.1.1"
+    is-glob "^4.0.0"
+    loader-utils "^1.1.0"
+    minimatch "^3.0.4"
+    normalize-path "^3.0.0"
+    p-limit "^2.1.0"
+    serialize-javascript "^1.4.0"
+    webpack-log "^2.0.0"
+
 core-js-compat@^3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/core-js-compat/-/core-js-compat-3.0.0.tgz#cd9810b8000742535a4a43773866185e310bd4f7"
@@ -4369,7 +4385,7 @@ dir-glob@2.0.0:
     arrify "^1.0.1"
     path-type "^3.0.0"
 
-dir-glob@^2.2.1:
+dir-glob@^2.0.0, dir-glob@^2.2.1:
   version "2.2.2"
   resolved "https://registry.yarnpkg.com/dir-glob/-/dir-glob-2.2.2.tgz#fa09f0694153c8918b18ba0deafae94769fc50c4"
   dependencies:
@@ -5615,6 +5631,17 @@ globby@^6.1.0:
     object-assign "^4.0.1"
     pify "^2.0.0"
     pinkie-promise "^2.0.0"
+
+globby@^7.1.1:
+  version "7.1.1"
+  resolved "https://registry.yarnpkg.com/globby/-/globby-7.1.1.tgz#fb2ccff9401f8600945dfada97440cca972b8680"
+  dependencies:
+    array-union "^1.0.1"
+    dir-glob "^2.0.0"
+    glob "^7.1.2"
+    ignore "^3.3.5"
+    pify "^3.0.0"
+    slash "^1.0.0"
 
 globby@^9.0.0:
   version "9.1.0"
@@ -8086,7 +8113,7 @@ p-limit@^1.1.0:
   dependencies:
     p-try "^1.0.0"
 
-p-limit@^2.0.0:
+p-limit@^2.0.0, p-limit@^2.1.0:
   version "2.2.0"
   resolved "https://registry.yarnpkg.com/p-limit/-/p-limit-2.2.0.tgz#417c9941e6027a9abcba5092dd2904e255b5fbc2"
   dependencies:

@@ -15,19 +15,19 @@ export default class MeLink extends React.PureComponent {
         className: PropTypes.string,
     };
 
+    // TODO: change photos
     static STATIC_IMAGE_SRC = [
-        './../static/images/me-1.jpg',
-        './../static/images/me-2.jpg',
+        './../images/me-1.JPG',
+        './../images/me-2.jpeg',
     ];
 
-    static ANIMATED_IMAGE_SRC = './../static/me.gif';
+    static ANIMATED_IMAGE_SRC = './../images/me.gif';
 
     constructor() {
         super(...arguments);
 
         this.mouseOverHandler = this.mouseOverHandler.bind(this);
         this.mouseOutHandler = this.mouseOutHandler.bind(this);
-        this.getRandomeNumber = this.getRandomeNumber.bind(this);
 
         this._linkRef = null;
 
@@ -63,7 +63,7 @@ export default class MeLink extends React.PureComponent {
                         <img
                             className={bem.element('image')}
                             src={this.state.imageSrc}
-                            alt={__('Фотография Дениса Мартынова')}
+                            alt={__('Денис Мартынов')}
                         />
                     </div>
                 </div>
@@ -79,11 +79,11 @@ export default class MeLink extends React.PureComponent {
 
     mouseOutHandler() {
         this.setState({
-            imageSrc: MeLink.STATIC_IMAGE_SRC[this.getRandomeNumber(0, 1)],
+            imageSrc: MeLink.STATIC_IMAGE_SRC[MeLink.getRandomeNumber(0, 1)],
         });
     }
 
-    getRandomeNumber(min, max) {
+    static getRandomeNumber(min, max) {
         return min + Math.floor(Math.random() * (max + 1 - min));
     }
 
