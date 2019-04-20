@@ -51,7 +51,7 @@ export default class Menu extends React.PureComponent {
                         <ul>
                             <li>
                                 <a href='tel:+79131716486'>
-                                    +7 (913) 171 64 86
+                                    +7 (913) 171-64-86
                                 </a>
                             </li>
                         </ul>
