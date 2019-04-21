@@ -29,7 +29,6 @@ export default class BlogPage extends React.PureComponent {
                 navItems={this.props.navItems}
                 isLife={this.props.isLife}
                 isArticle
-                isBlog
                 listId={getListId(this.props.isLife)}
                 action={getAction(this.props.isLife)}
             />

@@ -24,8 +24,6 @@ export default class PostsSection extends React.PureComponent {
     static propTypes = {
         navItems: PropTypes.arrayOf(NavItemSchema),
         isLife: PropTypes.bool,
-        isArticle: PropTypes.bool,
-        isBlog: PropTypes.bool,
         listId: PropTypes.string,
         action: PropTypes.string,
     };
@@ -41,7 +39,7 @@ export default class PostsSection extends React.PureComponent {
             <section className={bem.block()}>
                 <div className={bem.element('inner')}>
                     <h1 className={bem.element('title')}>
-                        {this.props.isBlog ? __('Блог') : __('Заметки')}
+                        {__('Блог')}
                     </h1>
                     <Nav
                         layout='tabs'
@@ -63,7 +61,7 @@ export default class PostsSection extends React.PureComponent {
         );
     }
 
-    // TODO: uncomment action property, delete items property
+    // TODO: uncomment action property, delete items property when API is ready
     getContent() {
         return (
             <List
@@ -72,8 +70,6 @@ export default class PostsSection extends React.PureComponent {
                 items={this.props.isLife ? articlesLife : articlesDev}
                 itemView={PostCard}
                 itemProps={{
-                    isArticle: this.props.isArticle,
-                    isSocilasButtons: this.props.isArticle,
                     className: 'PostsListView__item',
                 }}
                 view={PostsListView}
@@ -87,7 +83,7 @@ export default class PostsSection extends React.PureComponent {
     // TODO: better empty block
     getEmptyListMessage() {
         return (
-            <div>{__('Здесь пока нет ниодной записи.')}</div>
+            <div>{__('Здесь пока нет ни одной записи.')}</div>
         );
     }
 }

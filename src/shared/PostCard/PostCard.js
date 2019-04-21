@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import TimeLeftFormatter from 'ui/format/TimeLeftFormatter';
 
-import {html} from 'components';
+import { html } from 'components';
 import ArticleSchema from 'types/ArticleSchema';
 import Link from 'shared/Link';
 import RoutesEnum from 'enums/RoutesEnum';
@@ -15,8 +15,6 @@ export default class PostCard extends React.PureComponent {
 
     static propTypes = {
         item: ArticleSchema,
-        isArticle: PropTypes.bool,
-        isSocilasButtons: PropTypes.bool,
         className: PropTypes.string,
     };
 
@@ -35,47 +33,37 @@ export default class PostCard extends React.PureComponent {
                         url={this.props.item.slug}
                     />
                 </h2>
-                {this.props.isArticle && (
-                    <ul className={bem.element('categories')}>
-                        {this.props.item.categoriesIds.map(category => (
-                            <li
-                                key={category}
-                                className={bem.element('categories-item')}
+                <ul className={bem.element('categories')}>
+                    {this.props.item.categoriesIds.map(category => (
+                        <li
+                            key={category}
+                            className={bem.element('categories-item')}
+                        >
+                            <a
+                                className={bem.element('categories-link')}
+                                href='1'
                             >
-                                <a
-                                    className={bem.element('categories-link')}
-                                    href='1'
-                                >
-                                    {category}
-                                </a>
-                            </li>
-                        ))}
-                    </ul>
-                )}
-                {this.props.isArticle && (
-                    <p className={bem.element('subtitle')}>
-                        {this.props.item.subtitle}
-                    </p>
-                )}
+                                {category}
+                            </a>
+                        </li>
+                    ))}
+                </ul>
+                <p className={bem.element('subtitle')}>
+                    {this.props.item.subtitle}
+                </p>
                 <p className={bem.element('annotation')}>
                     {this.props.item.annotation}
                 </p>
                 <div className={bem.element('footer')}>
                     <div className={bem.element('footer-left')}>
-                        {this.props.isArticle && (
-                            <Link
-                                className={bem.element('read-link')}
-                                label={__('Читать дальше')}
-                                pageId={RoutesEnum.BLOG_POST}
-                                params={{
-                                    id: this.props.item.slug,
-                                }}
-                            />
-                        ) || (
-                            <div className={bem.element('socials-buttons')}>
-                                socials
-                            </div>
-                        )}
+                        <Link
+                            className={bem.element('read-link')}
+                            label={__('Читать дальше')}
+                            pageId={RoutesEnum.BLOG_POST}
+                            params={{
+                                id: this.props.item.slug,
+                            }}
+                        />
                     </div>
                     <div className={bem.element('footer-right')}>
                         <button
