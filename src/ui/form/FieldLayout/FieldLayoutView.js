@@ -29,14 +29,14 @@ export default class FieldLayoutView extends React.PureComponent {
 
     render() {
         return (
-            <fieldset className={bem(
+            <div className={bem(
                 bem.block({
                     layout: this.props.layout
                 }),
                 this.props.layoutClassName,
             )}>
                 {(this.props.label || this.props.label === '') && (
-                    <legend className={bem(
+                    <div className={bem(
                         bem.element('label', {
                             required: this.props.required,
                             disabled: this.props.disabled,
@@ -44,7 +44,7 @@ export default class FieldLayoutView extends React.PureComponent {
                         }),
                     )}>
                         {this.props.label}
-                    </legend>
+                    </div>
                 )}
                 <div className={bem.element('field')}>
                     {this.props.children}
@@ -74,7 +74,7 @@ export default class FieldLayoutView extends React.PureComponent {
                         </div>
                     )}
                 </div>
-            </fieldset>
+            </div>
         );
     }
 }
