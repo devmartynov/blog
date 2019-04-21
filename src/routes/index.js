@@ -79,20 +79,20 @@ export default {
             ],
         },
         {
-            id: RoutesEnum.CONTACTS,
-            exact: true,
-            path: '/contacts',
-            component: ContactsPage,
-            label: RoutesEnum.getLabel(RoutesEnum.CONTACTS),
-            title: RoutesEnum.getLabel(RoutesEnum.CONTACTS),
-        },
-        {
             id: RoutesEnum.ABOUT_ME,
             exact: true,
             path: '/me',
             component: AboutMePage,
             label: RoutesEnum.getLabel(RoutesEnum.ABOUT_ME),
             title: RoutesEnum.getLabel(RoutesEnum.ABOUT_ME),
+        },
+        {
+            id: RoutesEnum.CONTACTS,
+            exact: true,
+            path: '/contacts',
+            component: ContactsPage,
+            label: RoutesEnum.getLabel(RoutesEnum.CONTACTS),
+            title: RoutesEnum.getLabel(RoutesEnum.CONTACTS),
         },
     ]
 };
