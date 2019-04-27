@@ -9,6 +9,10 @@
   padding: 0;
   list-style: none;
 
+  &_layout_vertical {
+    flex-direction: column;
+  }
+
   &__link {
     display: inline-block;
     box-sizing: border-box;
@@ -23,6 +27,8 @@
     }
 
     &:hover {
+      cursor: pointer;
+
       #{$root}__icon path {
         fill: $link-blue;
       }
