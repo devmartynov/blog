@@ -13,6 +13,7 @@ export const articlesDev = [
         author: {
             id: 1,
             name: 'Денис Мартынов',
+            image: 'url',
         },
         views: 150,
         likes: 10,
@@ -33,6 +34,7 @@ export const articlesDev = [
         author: {
             id: 1,
             name: 'Денис Мартынов',
+            image: 'url',
         },
         views: 99,
         likes: 5,
@@ -56,6 +58,7 @@ export const articlesLife = [
         author: {
             id: 1,
             name: 'Денис Мартынов',
+            image: 'url',
         },
         views: 150,
         likes: 10,
@@ -76,6 +79,7 @@ export const articlesLife = [
         author: {
             id: 1,
             name: 'Денис Мартынов',
+            image: 'url',
         },
         views: 99,
         likes: 5,

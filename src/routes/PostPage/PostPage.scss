@@ -1,3 +1,70 @@
-.PostPage {
+@import "./../../style/helpers/vars";
+@import "./../../style/helpers/mixins";
 
+.PostPage {
+  width: 100%;
+  padding: 44px 16px;
+
+  @include horizontal-phone {
+    padding-left: 64px;
+    padding-right: 64px;
+  }
+
+  @include tablet {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  &__inner {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  &__title {
+    font-size: 34px;
+    font-weight: 900;
+    line-height: 1.1;
+    margin-top: 0;
+    margin-bottom: 16px;
+
+    @include horizontal-phone {
+      font-size: 45px;
+    }
+  }
+
+  &__short-info {
+    display: flex;
+    align-items: center;
+    margin-bottom: 16px;
+  }
+
+  &__image {
+    width: 42px;
+    height: 42px;
+    margin-right: 16px;
+    border-radius: 50%;
+    overflow: hidden;
+    background-color: $brand-blue;
+  }
+
+  &__author {
+    font-weight: 600;
+  }
+
+  &__create-date {
+    color: $color-gg-6;
+  }
+
+  &__subtitle {
+    font-size: 22px;
+    line-height: 1.5;
+    font-weight: 600;
+    margin-top: 0;
+    margin-bottom: 16px;
+  }
+
+  &__content {
+    font-size: 18px;
+    line-height: 1.6;
+  }
 }
