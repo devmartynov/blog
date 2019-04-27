@@ -8,9 +8,11 @@ import { html } from 'components';
 import Logo from 'shared/Logo';
 import Hamburger from 'shared/Hamburger';
 import MeLink from 'shared/MeLink';
-import Menu from 'shared/Menu/Menu';
+import Menu from 'shared/Menu';
+import WorkStatus from 'shared/WorkStatus';
 import Navigation from 'shared/Navigation/Navigation';
 import RoutesEnum from 'enums/RoutesEnum';
+import WorkStatusEnum from 'enums/WorkStatusEnum';
 import NavItemSchema from 'types/NavItemSchema';
 
 import './Header.scss';
@@ -45,6 +47,9 @@ export default class Header extends React.PureComponent {
                     <div className={bem.element('inner')}>
                         <div className={bem.element('logo')}>
                             <Logo/>
+                        </div>
+                        <div className={bem.element('work-status')}>
+                            <WorkStatus status={WorkStatusEnum.HAVE_FREE_TIME}/>
                         </div>
                         <div className={bem.element('content')}>
                             <div className={bem.element('content-inner')}>

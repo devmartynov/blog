@@ -1,0 +1,25 @@
+@import "../../style/helpers/vars";
+@import "../../style/helpers/mixins";
+
+//TODO: add animation to user to pay attention
+.WorkStatus {
+  font-size: 14px;
+  padding: 7px 16px;
+  color: $color-base;
+  line-height: 1;
+  border-radius: 2px;
+
+  &_status {
+    &_have-free-time {
+      background-color: $green;
+    }
+
+    &_free {
+      background-color: $green;
+    }
+
+    &_busy {
+      background-color: $red;
+    }
+  }
+}

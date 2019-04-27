@@ -1,7 +1,7 @@
 @import "../../../style/helpers/vars";
 @import "../../../style/helpers/mixins";
 
-.PostSectionListView {
+.PostsListView {
   &__inner {
     @include tablet {
       display: flex;

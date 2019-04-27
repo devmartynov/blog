@@ -3,9 +3,8 @@ import LayoutEnum from '../enums/LayoutEnum';
 import {Redirect} from 'react-router';
 
 import MainPage from './MainPage';
-import ArticlesPage from './ArticlesPage';
-import ArticlePage from './ArticlePage';
-import NotesPage from './NotesPage';
+import BlogPage from './BlogPage';
+import PostPage from './PostPage';
 import ContactsPage from './ContactsPage';
 import AboutMePage from './AboutMePage';
 
@@ -19,66 +18,65 @@ export default {
     layout: LayoutEnum.NO_FOOTER,
     items: [
         {
-            id: RoutesEnum.ARTICLES,
+            id: RoutesEnum.BLOG,
             exact: true,
-            path: '/articles',
+            path: '/blog',
             component: Redirect,
             componentProps: {
-                to: '/articles/dev'
+                to: '/blog/dev'
             },
-            label: RoutesEnum.getLabel(RoutesEnum.ARTICLES),
-            title: RoutesEnum.getLabel(RoutesEnum.ARTICLES),
+            label: RoutesEnum.getLabel(RoutesEnum.BLOG),
+            title: RoutesEnum.getLabel(RoutesEnum.BLOG),
             items: [
                 {
-                    id: RoutesEnum.ARTICLES_DEVELOPMENT,
+                    id: RoutesEnum.BLOG_DEVELOPMENT,
                     exact: true,
-                    path: '/articles/dev',
-                    component: ArticlesPage,
+                    path: '/blog/dev',
+                    component: BlogPage,
                     componentProps: {
                         isLife: false,
                     },
-                    label: RoutesEnum.getLabel(RoutesEnum.ARTICLES_DEVELOPMENT),
-                    title: RoutesEnum.getLabel(RoutesEnum.ARTICLES_DEVELOPMENT),
+                    label: RoutesEnum.getLabel(RoutesEnum.BLOG_DEVELOPMENT),
+                    title: RoutesEnum.getLabel(RoutesEnum.BLOG_DEVELOPMENT),
+                    items: [
+                        {
+                            id: RoutesEnum.BLOG_POST,
+                            exact: true,
+                            path: '/blog/dev/:id(\\w{2,})',
+                            component: PostPage,
+                            componentProps: {
+                                isLife: false,
+                            },
+                            label: RoutesEnum.getLabel(RoutesEnum.BLOG_POST),
+                            title: RoutesEnum.getLabel(RoutesEnum.BLOG_POST),
+                        },
+                    ]
                 },
                 {
-                    id: RoutesEnum.ARTICLES_LIFE,
+                    id: RoutesEnum.BLOG_LIFE,
                     exact: true,
-                    path: '/articles/life',
-                    component: ArticlesPage,
+                    path: '/blog/life',
+                    component: BlogPage,
                     componentProps: {
                         isLife: true,
                     },
-                    label: RoutesEnum.getLabel(RoutesEnum.ARTICLES_LIFE),
-                    title: RoutesEnum.getLabel(RoutesEnum.ARTICLES_LIFE),
-                },
-                {
-                    id: RoutesEnum.ARTICLE_ITEM,
-                    exact: true,
-                    path: '/articles/:type?/:id(\\w{2,})',
-                    component: ArticlePage,
-                    componentProps: {
-                        isLife: true,
-                    },
-                    label: RoutesEnum.getLabel(RoutesEnum.ARTICLE_ITEM),
-                    title: RoutesEnum.getLabel(RoutesEnum.ARTICLE_ITEM),
+                    label: RoutesEnum.getLabel(RoutesEnum.BLOG_LIFE),
+                    title: RoutesEnum.getLabel(RoutesEnum.BLOG_LIFE),
+                    items: [
+                        {
+                            id: RoutesEnum.BLOG_POST,
+                            exact: true,
+                            path: '/blog/life/:id(\\w{2,})',
+                            component: PostPage,
+                            componentProps: {
+                                isLife: true,
+                            },
+                            label: RoutesEnum.getLabel(RoutesEnum.BLOG_POST),
+                            title: RoutesEnum.getLabel(RoutesEnum.BLOG_POST),
+                        },
+                    ],
                 },
             ],
-        },
-        {
-            id: RoutesEnum.NOTES,
-            exact: true,
-            path: '/notes',
-            component: NotesPage,
-            label: RoutesEnum.getLabel(RoutesEnum.NOTES),
-            title: RoutesEnum.getLabel(RoutesEnum.NOTES),
-        },
-        {
-            id: RoutesEnum.CONTACTS,
-            exact: true,
-            path: '/contacts',
-            component: ContactsPage,
-            label: RoutesEnum.getLabel(RoutesEnum.CONTACTS),
-            title: RoutesEnum.getLabel(RoutesEnum.CONTACTS),
         },
         {
             id: RoutesEnum.ABOUT_ME,
@@ -87,6 +85,14 @@ export default {
             component: AboutMePage,
             label: RoutesEnum.getLabel(RoutesEnum.ABOUT_ME),
             title: RoutesEnum.getLabel(RoutesEnum.ABOUT_ME),
+        },
+        {
+            id: RoutesEnum.CONTACTS,
+            exact: true,
+            path: '/contacts',
+            component: ContactsPage,
+            label: RoutesEnum.getLabel(RoutesEnum.CONTACTS),
+            title: RoutesEnum.getLabel(RoutesEnum.CONTACTS),
         },
     ]
 };

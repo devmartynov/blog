@@ -45,8 +45,8 @@ export default class CategoriesBlock extends React.PureComponent {
         return (
             <CheckboxListField
                 layout='filter'
-                attribute='categories'
-                label={__('Категории')}
+                attribute='categoriesIds'
+                label={false}
                 items={this.props.items}
                 view={CategoriesCheckboxListFieldView}
                 emptyLabel={__('Все')}

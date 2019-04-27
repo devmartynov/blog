@@ -5,18 +5,18 @@ import {getNavItems} from 'yii-steroids/reducers/navigation';
 
 import RoutesEnum from 'enums/RoutesEnum';
 import NavItemSchema from 'types/NavItemSchema';
-import PostSection from 'shared/PostSection';
+import PostsSection from 'shared/PostsSection';
 
 const getListId = isLife => isLife ? 'list_articles_life' : 'list_articles_development';
-const getAction = isLife => isLife ? '/articles?type=life' : '/articles?type=development';
+const getAction = isLife => isLife ? '/blog?type=life' : '/blog?type=development';
 
 @connect(
     (state, props) => ({
-        navItems: getNavItems(state, RoutesEnum.ARTICLES),
+        navItems: getNavItems(state, RoutesEnum.BLOG),
         isLife: props.isLife,
     })
 )
-export default class ArticlesPage extends React.PureComponent {
+export default class BlogPage extends React.PureComponent {
 
     static propTypes = {
         navItems: PropTypes.arrayOf(NavItemSchema),
@@ -25,11 +25,10 @@ export default class ArticlesPage extends React.PureComponent {
 
     render() {
         return (
-            <PostSection
+            <PostsSection
                 navItems={this.props.navItems}
                 isLife={this.props.isLife}
                 isArticle
-                isBlog
                 listId={getListId(this.props.isLife)}
                 action={getAction(this.props.isLife)}
             />
