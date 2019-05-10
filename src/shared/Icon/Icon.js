@@ -49,6 +49,7 @@ import EyeIcon from './EyeIcon';
 
 export default class Icon extends React.PureComponent {
 
+    //TODO: add "youtube" icon
     render() {
         switch (this.props.name) {
             case 'add':

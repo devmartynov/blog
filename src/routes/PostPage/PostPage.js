@@ -1,13 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {connect} from 'react-redux';
+import DateFormatter from 'yii-steroids/ui/format/DateFormatter';
 
 import {html} from 'components';
 
-import './PostPage.scss';
+//static data
+import { articlesDev } from 'static/data/articles';
+const article = articlesDev[1];
 
-// static data
-import {articlesDev} from 'static/data/articles';
+import './PostPage.scss';
 
 const bem = html.bem('PostPage');
 
@@ -19,11 +20,43 @@ export default class PostPage extends React.PureComponent {
         data: PropTypes.any
     };
 
+    //TODO: facebook and vk likes button in the bottom of post page
     render() {
-        console.log(this.props);
         return (
             <section className={bem.block()}>
-                1
+                <div className={bem.element('inner')}>
+                    <h1 className={bem.element('title')}>
+                        {article.title}
+                    </h1>
+                    <div className={bem.element('short-info')}>
+                        {article.author.image && (
+                            <img
+                                className={bem.element('image')}
+                                src={article.author.image}
+                                alt={article.author.name}
+                            />
+                        )}
+                        <div className={bem.element('short-info-inner')}>
+                            <div className={bem.element('author')}>
+                                {article.author.name}
+                            </div>
+                            <time
+                                className={bem.element('create-date')}
+                                dateTime={article.createdAt}
+                            >
+                                <DateFormatter
+                                    value={article.createdAt}
+                                />
+                            </time>
+                        </div>
+                    </div>
+                    <p className={bem.element('subtitle')}>
+                        {article.subtitle}
+                    </p>
+                    <div className={bem.element('content')}>
+                        {article.content}
+                    </div>
+                </div>
             </section>
         );
     }

@@ -48,9 +48,6 @@ export default class Header extends React.PureComponent {
                         <div className={bem.element('logo')}>
                             <Logo/>
                         </div>
-                        <div className={bem.element('work-status')}>
-                            <WorkStatus status={WorkStatusEnum.HAVE_FREE_TIME}/>
-                        </div>
                         <div className={bem.element('content')}>
                             <div className={bem.element('content-inner')}>
                                 <Navigation
