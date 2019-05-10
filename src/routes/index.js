@@ -38,19 +38,6 @@ export default {
                     },
                     label: RoutesEnum.getLabel(RoutesEnum.BLOG_DEVELOPMENT),
                     title: RoutesEnum.getLabel(RoutesEnum.BLOG_DEVELOPMENT),
-                    items: [
-                        {
-                            id: RoutesEnum.BLOG_POST,
-                            exact: true,
-                            path: '/blog/dev/:id(\\w{2,})',
-                            component: PostPage,
-                            componentProps: {
-                                isLife: false,
-                            },
-                            label: RoutesEnum.getLabel(RoutesEnum.BLOG_POST),
-                            title: RoutesEnum.getLabel(RoutesEnum.BLOG_POST),
-                        },
-                    ]
                 },
                 {
                     id: RoutesEnum.BLOG_LIFE,
@@ -62,19 +49,14 @@ export default {
                     },
                     label: RoutesEnum.getLabel(RoutesEnum.BLOG_LIFE),
                     title: RoutesEnum.getLabel(RoutesEnum.BLOG_LIFE),
-                    items: [
-                        {
-                            id: RoutesEnum.BLOG_POST,
-                            exact: true,
-                            path: '/blog/life/:id(\\w{2,})',
-                            component: PostPage,
-                            componentProps: {
-                                isLife: true,
-                            },
-                            label: RoutesEnum.getLabel(RoutesEnum.BLOG_POST),
-                            title: RoutesEnum.getLabel(RoutesEnum.BLOG_POST),
-                        },
-                    ],
+                },
+                {
+                    id: RoutesEnum.BLOG_POST,
+                    exact: true,
+                    path: '/blog/:type?/:slug',
+                    component: PostPage,
+                    label: RoutesEnum.getLabel(RoutesEnum.BLOG_POST),
+                    title: RoutesEnum.getLabel(RoutesEnum.BLOG_POST),
                 },
             ],
         },

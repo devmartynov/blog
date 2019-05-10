@@ -30,7 +30,10 @@ export default class PostCard extends React.PureComponent {
                 <h2 className={bem.element('title')}>
                     <Link
                         label={this.props.item.title}
-                        url={this.props.item.slug}
+                        pageId={RoutesEnum.BLOG_POST}
+                        params={{
+                            slug: this.props.item.slug,
+                        }}
                     />
                 </h2>
                 <ul className={bem.element('categories')}>
@@ -61,7 +64,7 @@ export default class PostCard extends React.PureComponent {
                             label={__('Читать дальше')}
                             pageId={RoutesEnum.BLOG_POST}
                             params={{
-                                id: this.props.item.slug,
+                                slug: this.props.item.slug,
                             }}
                         />
                     </div>
