@@ -9,10 +9,8 @@ import Logo from 'shared/Logo';
 import Hamburger from 'shared/Hamburger';
 import MeLink from 'shared/MeLink';
 import Menu from 'shared/Menu';
-import WorkStatus from 'shared/WorkStatus';
 import Navigation from 'shared/Navigation/Navigation';
 import RoutesEnum from 'enums/RoutesEnum';
-import WorkStatusEnum from 'enums/WorkStatusEnum';
 import NavItemSchema from 'types/NavItemSchema';
 
 import './Header.scss';
@@ -44,30 +42,25 @@ export default class Header extends React.PureComponent {
         return (
             <Headroom>
                 <header className={bem.block()}>
-                    <div className={bem.element('inner')}>
-                        <div className={bem.element('logo')}>
-                            <Logo/>
-                        </div>
-                        <div className={bem.element('content')}>
-                            <div className={bem.element('content-inner')}>
-                                <Navigation
-                                    className={bem.element('nav', {hidden: this.state.isMenuOpen})}
-                                    navItems={this.props.navItems}
-                                />
-                                <MeLink className={bem.element('me-link', {hidden: this.state.isMenuOpen})}/>
-                            </div>
-                        </div>
-                        <Hamburger
-                            isOpen={this.state.isMenuOpen}
-                            onClick={this.onHamburgerClick}
+                    <Logo
+                        className={bem.element('logo')}
+                        title={__('Перейти на главую страницу')}
+                    />
+                    <Navigation
+                        className={bem.element('nav', { hidden: this.state.isMenuOpen })}
+                        navItems={this.props.navItems}
+                    />
+                    <MeLink className={bem.element('me-link', { hidden: this.state.isMenuOpen })}/>
+                    <Hamburger
+                        isOpen={this.state.isMenuOpen}
+                        onClick={this.onHamburgerClick}
+                    />
+                    {this.state.isMenuOpen && (
+                        <Menu
+                            navItems={this.props.navItems.filter(item => item.id !== RoutesEnum.CONTACTS)}
+                            closeMenu={this.onHamburgerClick}
                         />
-                        {this.state.isMenuOpen && (
-                            <Menu
-                                navItems={this.props.navItems.filter(item => item.id !== RoutesEnum.CONTACTS)}
-                                closeMenu={this.onHamburgerClick}
-                            />
-                        )}
-                    </div>
+                    )}
                 </header>
             </Headroom>
         );
@@ -75,7 +68,7 @@ export default class Header extends React.PureComponent {
 
     //TODO: fix overflow
     onHamburgerClick() {
-        this.setState({isMenuOpen: !this.state.isMenuOpen}, () => {
+        this.setState({ isMenuOpen: !this.state.isMenuOpen }, () => {
             const body = document.querySelector('body');
 
             // prevent user scrolling

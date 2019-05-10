@@ -79,11 +79,11 @@ export default class MeLink extends React.PureComponent {
 
     mouseOutHandler() {
         this.setState({
-            imageSrc: MeLink.STATIC_IMAGE_SRC[MeLink.getRandomeNumber(0, 1)],
+            imageSrc: MeLink.STATIC_IMAGE_SRC[MeLink.getRandomNumber(0, 1)],
         });
     }
 
-    static getRandomeNumber(min, max) {
+    static getRandomNumber(min, max) {
         return min + Math.floor(Math.random() * (max + 1 - min));
     }
 

@@ -14,6 +14,7 @@ export default class Link extends React.PureComponent {
 
     static propTypes = {
         label: PropTypes.string,
+        title: PropTypes.string,
         pageId: PropTypes.string,
         url: PropTypes.string,
         params: PropTypes.object,
@@ -25,6 +26,7 @@ export default class Link extends React.PureComponent {
             <a
                 className={this.props.className}
                 href={this.props.url}
+                title={this.props.title}
                 onClick={e => this._onClick(e)}
             >
                 {this.props.label || this.props.children}
