@@ -19,6 +19,9 @@ import './style/index.scss';
 ui.addViews(require.context('./ui', true, /View.js$/));
 ui.addViews({
     'form.FormView': require('yii-steroids/ui/form/Form/FormView').default,
+    'form.ButtonView': require('ui/form/Button/ButtonView').default,
+    'nav.NavTabsView': require('ui/nav/Nav/NavTabsView').default,
+    'form.FieldLayoutView': require('ui/form/FieldLayout/FieldLayoutView').default,
 });
 
 @hot(module)

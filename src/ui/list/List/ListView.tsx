@@ -2,8 +2,8 @@ import React from 'react';
 import { Requireable, ReactNodeLike } from 'prop-types';
 
 import { html } from 'components';
-import Pagination from 'ui/Pagination/index';
-import PaginationMoreView from 'PaginationMoreView.tsx';
+import Pagination from 'ui/Pagination';
+import PaginationMoreView from 'ui/Pagination/PaginationMoreView';
 
 const bem = html.bem('ListView');
 
