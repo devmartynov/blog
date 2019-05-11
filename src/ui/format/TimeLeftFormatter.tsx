@@ -1,15 +1,14 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import moment from 'moment';
 
-export default class TimeLeftFormatter extends React.PureComponent {
+interface IntOwnProps {
+    value: string;
+    withTime: boolean;
+}
 
-    static propTypes = {
-        value: PropTypes.string,
-        withTime: PropTypes.bool,
-    };
+export default class TimeLeftFormatter extends React.PureComponent<IntOwnProps> {
 
-    //TODO: fix static ' г.' in year format
+    // TODO: fix static ' г.' in year format
     render() {
         const minutes = moment().diff(moment(this.props.value).utc(), 'minute');
         if (minutes < 60) {

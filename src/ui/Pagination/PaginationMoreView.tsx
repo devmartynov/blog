@@ -1,18 +1,19 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+// @ts-ignore
 import Button from 'yii-steroids/ui/form/Button';
 
-import {html} from 'components';
+import { html } from 'components';
+import IterableGenericObjectModel from 'models/IterableGenericObject';
 
 const bem = html.bem('PaginationMoreView');
 
-export default class PaginationMoreView extends React.Component {
+interface IntOwnProps {
+    text: string;
+    buttonProps: IterableGenericObjectModel<string | boolean>;
+    onSelectNext: () => void;
+}
 
-    static propTypes = {
-        text: PropTypes.string,
-        buttonProps: PropTypes.object,
-        onSelectNext: PropTypes.func,
-    };
+export default class PaginationMoreView extends React.Component<IntOwnProps> {
 
     render() {
         return (

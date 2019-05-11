@@ -1,33 +1,34 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import { Requireable, ReactNodeLike } from 'prop-types';
 
-import {html} from 'components';
+import { html } from 'components';
 import Link from 'shared/Link';
-import NavItemSchema from 'types/NavItemSchema';
+import NavItemModel from 'models/NavItem';
 
 const bem = html.bem('NavTabsView');
 
-export default class NavTabsView extends React.Component {
+interface IntOwnProps {
+    items: Array<NavItemModel>;
+    className: string;
+    onClick: (item: NavItemModel, index: number) => void;
+    children: Requireable<ReactNodeLike>;
+}
 
-    static propTypes = {
-        items: PropTypes.arrayOf(NavItemSchema),
-        className: PropTypes.string,
-        onClick: PropTypes.func,
-    };
+export default class NavTabsView extends React.Component<IntOwnProps> {
 
     render() {
         return (
             <div className={bem(bem.block(), this.props.className)}>
                 <ul className={bem.element('items')}>
-                    {this.props.items.map((item, index) => (
+                    {this.props.items.map((item: NavItemModel, index: number) => (
                         <li
                             className={bem.element('item')}
                             key={index}
                         >
                             <Link
-                                className={bem.element('link', {active: item.isActive})}
+                                className={bem.element('link', { active: item.isActive })}
                                 href={item.url}
-                                onClick={e => {
+                                onClick={(e: Event) => {
                                     e.preventDefault();
                                     this.props.onClick(item, index);
                                 }}

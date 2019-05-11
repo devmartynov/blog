@@ -1,27 +1,27 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import { Requireable, ReactNodeLike } from 'prop-types';
 import Modal from 'react-modal';
 
-import {html} from 'components';
+import { html } from 'components';
 
 const bem = html.bem('ModalView');
 
-export default class ModalView extends React.PureComponent {
+interface IntOwnProps {
+    overlay: string;
+    onClose: () => void;
+    children: Requireable<ReactNodeLike>;
+}
 
-    static propTypes = {
-        onClose: PropTypes.func,
-        children: PropTypes.node,
-        overlay: PropTypes.string,
-    };
+export default class ModalView extends React.PureComponent<IntOwnProps> {
 
     render() {
         return (
             <div className={bem.block()}>
                 <Modal
-                    isOpen={true}
                     className={bem.element('modal')}
                     overlayClassName={bem(bem.element('overlay'), this.props.overlay)}
                     ariaHideApp={false}
+                    isOpen
                     {...this.props}
                 >
                     <div className={bem.element('inner')}>

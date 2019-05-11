@@ -45,6 +45,7 @@
             "arrow-parameter"
         ],
         "object-literal-sort-keys": false,
+        "object-literal-key-quotes": [true, "as-needed"],
         "no-constant-condition": true,
         "jsx-wrap-multiline": false,
         "jsx-no-multiline-js": false,

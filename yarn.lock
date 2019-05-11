@@ -1505,6 +1505,12 @@
     "@types/node" "*"
     "@types/react" "*"
 
+"@types/react-modal@^3.8.2":
+  version "3.8.2"
+  resolved "https://registry.yarnpkg.com/@types/react-modal/-/react-modal-3.8.2.tgz#401309e624cde522d65c3ef04918dbe325383598"
+  dependencies:
+    "@types/react" "*"
+
 "@types/react-redux@^7.0.8":
   version "7.0.8"
   resolved "https://registry.yarnpkg.com/@types/react-redux/-/react-redux-7.0.8.tgz#c928863058e334d41031c6bedd0f113bc514e234"
