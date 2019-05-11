@@ -1,19 +1,22 @@
-import RoutesEnum from '../enums/RoutesEnum';
-import LayoutEnum from '../enums/LayoutEnum';
-import {Redirect} from 'react-router';
+import { Redirect } from 'react-router';
 
-import MainPage from './MainPage';
-import BlogPage from './BlogPage';
-import PostPage from './PostPage';
-import ContactsPage from './ContactsPage';
-import AboutMePage from './AboutMePage';
+import RoutesEnum from 'enums/RoutesEnum';
+import LayoutEnum from 'enums/LayoutEnum';
+
+import MainPage from './MainPage/index';
+import BlogPage from './BlogPage/index';
+import PostPage from './PostPage/index';
+import ContactsPage from './ContactsPage/index';
+import AboutMePage from './AboutMePage/index';
 
 export default {
     id: RoutesEnum.MAIN,
     exact: true,
     path: '/',
     component: MainPage,
+    // @ts-ignore
     label: RoutesEnum.getLabel(RoutesEnum.MAIN),
+    // @ts-ignore
     title: RoutesEnum.getLabel(RoutesEnum.MAIN),
     layout: LayoutEnum.NO_FOOTER,
     items: [
@@ -23,9 +26,11 @@ export default {
             path: '/blog',
             component: Redirect,
             componentProps: {
-                to: '/blog/dev'
+                to: '/blog/dev',
             },
+            // @ts-ignore
             label: RoutesEnum.getLabel(RoutesEnum.BLOG),
+            // @ts-ignore
             title: RoutesEnum.getLabel(RoutesEnum.BLOG),
             items: [
                 {
@@ -36,7 +41,9 @@ export default {
                     componentProps: {
                         isLife: false,
                     },
+                    // @ts-ignore
                     label: RoutesEnum.getLabel(RoutesEnum.BLOG_DEVELOPMENT),
+                    // @ts-ignore
                     title: RoutesEnum.getLabel(RoutesEnum.BLOG_DEVELOPMENT),
                 },
                 {
@@ -47,7 +54,9 @@ export default {
                     componentProps: {
                         isLife: true,
                     },
+                    // @ts-ignore
                     label: RoutesEnum.getLabel(RoutesEnum.BLOG_LIFE),
+                    // @ts-ignore
                     title: RoutesEnum.getLabel(RoutesEnum.BLOG_LIFE),
                 },
                 {
@@ -55,7 +64,9 @@ export default {
                     exact: true,
                     path: '/blog/:type?/:slug',
                     component: PostPage,
+                    // @ts-ignore
                     label: RoutesEnum.getLabel(RoutesEnum.BLOG_POST),
+                    // @ts-ignore
                     title: RoutesEnum.getLabel(RoutesEnum.BLOG_POST),
                 },
             ],
@@ -65,7 +76,9 @@ export default {
             exact: true,
             path: '/me',
             component: AboutMePage,
+            // @ts-ignore
             label: RoutesEnum.getLabel(RoutesEnum.ABOUT_ME),
+            // @ts-ignore
             title: RoutesEnum.getLabel(RoutesEnum.ABOUT_ME),
         },
         {
@@ -73,8 +86,10 @@ export default {
             exact: true,
             path: '/contacts',
             component: ContactsPage,
+            // @ts-ignore
             label: RoutesEnum.getLabel(RoutesEnum.CONTACTS),
+            // @ts-ignore
             title: RoutesEnum.getLabel(RoutesEnum.CONTACTS),
         },
-    ]
+    ],
 };

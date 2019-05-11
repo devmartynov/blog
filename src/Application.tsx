@@ -10,7 +10,7 @@ import Router from 'yii-steroids/ui/nav/Router';
 import { ui } from 'components';
 import Layout from 'shared/Layout';
 import ErrorBoundary from 'shared/ErrorBoundary';
-import routesTree from './routes';
+import routesTree from './routes/index';
 import RoutesTreeModel from 'models/RoutesTree';
 
 import './style/index.scss';

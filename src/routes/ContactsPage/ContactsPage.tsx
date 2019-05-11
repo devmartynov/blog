@@ -8,9 +8,9 @@ export default class ContactsPage extends React.PureComponent {
 
     render() {
         return (
-            <div className={bem.block()}>
+            <section className={bem.block()}>
                 ContactsPage
-            </div>
+            </section>
         );
     }
 

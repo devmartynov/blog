@@ -1,24 +1,24 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+// @ts-ignore
 import DateFormatter from 'yii-steroids/ui/format/DateFormatter';
 
-import {html} from 'components';
+import { html } from 'components';
 
-//static data
+// static data
 import { articlesDev } from 'static/data/articles';
-const article = articlesDev[1];
+import ArticleModel from 'models/Article';
 
+const article = articlesDev[1];
 const bem = html.bem('PostPage');
 
-//TODO: http request to get post by {id}
-export default class PostPage extends React.PureComponent {
+interface IntOwnProps {
+    article: ArticleModel;
+}
 
-    //TODO: delete any
-    static propTypes = {
-        data: PropTypes.any
-    };
+// TODO: http request to get post by {id}
+export default class PostPage extends React.PureComponent<IntOwnProps> {
 
-    //TODO: facebook and vk likes button in the bottom of post page
+    // TODO: facebook and vk likes button in the bottom of post page
     render() {
         return (
             <section className={bem.block()}>
