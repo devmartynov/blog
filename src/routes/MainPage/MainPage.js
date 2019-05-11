@@ -2,8 +2,6 @@ import React from 'react';
 
 import {html} from 'components';
 
-import './MainPage.scss';
-
 const bem = html.bem('MainPage');
 
 export default class MainPage extends React.PureComponent {

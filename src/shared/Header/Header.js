@@ -13,8 +13,6 @@ import Navigation from 'shared/Navigation/Navigation';
 import RoutesEnum from 'enums/RoutesEnum';
 import NavItemSchema from 'types/NavItemSchema';
 
-import './Header.scss';
-
 const bem = html.bem('Header');
 
 @connect(

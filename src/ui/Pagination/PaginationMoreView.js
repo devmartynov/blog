@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Button from 'yii-steroids/ui/form/Button';
-import './PaginationMoreView.scss';
 
 import {html} from 'components';
 

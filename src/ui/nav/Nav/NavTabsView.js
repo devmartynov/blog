@@ -1,11 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import {html} from 'components/index';
+import {html} from 'components';
 import Link from 'shared/Link';
 import NavItemSchema from 'types/NavItemSchema';
-
-import './NavTabsView.scss';
 
 const bem = html.bem('NavTabsView');
 

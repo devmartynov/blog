@@ -1,0 +1,79 @@
+{
+    "extends": [
+        "tslint:recommended",
+        "tslint-eslint-rules",
+        "tslint-react"
+    ],
+    "linterOptions": {
+        "exclude": [
+            "node_modules/**",
+            "public/**"
+        ]
+    },
+    "rules": {
+        "no-any": true,
+        "array-type": [
+            true,
+            "generic"
+        ],
+        "ordered-imports": [
+            true,
+            {
+                "import-sources-order": "any",
+                "named-imports-order": "any"
+            }
+        ],
+        "interface-name": [
+            true,
+            "never-prefix"
+        ],
+        "no-unused-variable": [
+            true,
+            {
+                "ignore-pattern": "^_"
+            }
+        ],
+        "no-trailing-whitespace": [
+            true,
+            "ignore-blank-lines"
+        ],
+        "jsx-alignment": false,
+        "no-console": false,
+        "typedef": [
+            true,
+            "parameter",
+            "arrow-parameter"
+        ],
+        "object-literal-sort-keys": false,
+        "no-constant-condition": true,
+        "jsx-wrap-multiline": false,
+        "jsx-no-multiline-js": false,
+        "indent": [
+            true,
+            "spaces",
+            4
+        ],
+        "no-var-requires": false,
+        "jsx-no-lambda": false,
+        "member-access": [
+            true,
+            "no-public"
+        ],
+        "quotemark": [
+            true,
+            "single"
+        ],
+        "max-classes-per-file": false,
+        "jsx-boolean-value": [
+            "never"
+        ],
+        "eofline": false,
+        "trailing-comma": [
+            false
+        ],
+        "whitespace": [
+            true,
+            "check-module"
+        ]
+    }
+}

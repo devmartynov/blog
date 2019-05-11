@@ -1,12 +1,14 @@
+// @ts-ignore
 import Enum from 'yii-steroids/base/Enum';
+import IterableGenericObjectModel from 'models/IterableGenericObject';
 
 export default class WorkStatusEnum extends Enum {
 
-    static FREE = 'free';
-    static BUSY = 'busy';
-    static HAVE_FREE_TIME = 'have_free_time';
+    static FREE: string = 'free';
+    static BUSY: string = 'busy';
+    static HAVE_FREE_TIME: string = 'have_free_time';
 
-    static getLabels() {
+    static getLabels(): IterableGenericObjectModel<string> {
         return {
             [this.FREE]: __('Полностью свободен'),
             [this.BUSY]: __('Занят'),
@@ -14,7 +16,7 @@ export default class WorkStatusEnum extends Enum {
         };
     }
 
-    static getCssClasses() {
+    static getCssClasses(): IterableGenericObjectModel<string> {
         return {
             [this.FREE]: 'free',
             [this.BUSY]: 'busy',
@@ -22,7 +24,7 @@ export default class WorkStatusEnum extends Enum {
         };
     }
 
-    static getTitles() {
+    static getTitles(): IterableGenericObjectModel<string> {
         return {
             [this.FREE]: __('Могу посвятить все свое время новому проекту'),
             [this.BUSY]: __('В данный момент сильно занят'),
@@ -30,7 +32,7 @@ export default class WorkStatusEnum extends Enum {
         };
     }
 
-    static getTitle(id) {
+    static getTitle(id: string): string {
         return this.getTitles()[id] || '';
     }
 }

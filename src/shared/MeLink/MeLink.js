@@ -5,8 +5,6 @@ import { html } from 'components';
 import Link from 'shared/Link';
 import RoutesEnum from 'enums/RoutesEnum';
 
-import './MeLink.scss';
-
 const bem = html.bem('MeLink');
 
 export default class MeLink extends React.PureComponent {

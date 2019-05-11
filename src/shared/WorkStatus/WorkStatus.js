@@ -4,8 +4,6 @@ import PropTypes from 'prop-types';
 import {html} from 'components';
 import WorkStatusEnum from 'enums/WorkStatusEnum';
 
-import './WorkStatus.scss';
-
 const bem = html.bem('WorkStatus');
 
 export default class WorkStatus extends React.PureComponent {

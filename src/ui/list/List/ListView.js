@@ -5,8 +5,6 @@ import { html } from 'components';
 import Pagination from 'ui/Pagination';
 import PaginationMoreView from 'ui/Pagination/PaginationMoreView';
 
-import './ListView.scss';
-
 const bem = html.bem('ListView');
 
 export default class ListView extends React.Component {

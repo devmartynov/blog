@@ -5,8 +5,6 @@ import Button from 'ui/form/Button';
 import SocialNetworks from 'shared/SocialNetworks';
 import Icon from 'shared/Icon';
 
-import './Footer.scss';
-
 const bem = html.bem('Footer');
 
 export default class Footer extends React.PureComponent {

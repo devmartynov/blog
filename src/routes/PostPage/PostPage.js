@@ -8,8 +8,6 @@ import {html} from 'components';
 import { articlesDev } from 'static/data/articles';
 const article = articlesDev[1];
 
-import './PostPage.scss';
-
 const bem = html.bem('PostPage');
 
 //TODO: http request to get post by {id}

@@ -1,15 +1,17 @@
+// @ts-ignore
 import Enum from 'yii-steroids/base/Enum';
+import IterableGenericObjectModel from 'models/IterableGenericObject';
 
 export default class SocialsEnum extends Enum {
 
-    static TELEGRAM = 'telegram';
-    static VK = 'vk';
-    static INSTA = 'insta';
-    static OK = 'ok';
-    static YOUTUBE = 'youtube';
-    static TWITTER = 'twitter';
+    static TELEGRAM: string = 'telegram';
+    static VK: string = 'vk';
+    static INSTA: string = 'insta';
+    static OK: string = 'ok';
+    static YOUTUBE: string = 'youtube';
+    static TWITTER: string = 'twitter';
 
-    static getLabels() {
+    static getLabels(): IterableGenericObjectModel<string> {
         return {
             [this.TELEGRAM]: __('Телеграм'),
             [this.VK]: __('Вконтакте'),
@@ -20,7 +22,7 @@ export default class SocialsEnum extends Enum {
         };
     }
 
-    static getIconsLabels() {
+    static getIconsLabels(): IterableGenericObjectModel<string> {
         return {
             [this.TELEGRAM]: 'telegram',
             [this.VK]: 'vk',
@@ -31,11 +33,11 @@ export default class SocialsEnum extends Enum {
         };
     }
 
-    static getIconsLabel(id) {
+    static getIconsLabel(id: string): string {
         return this.getIconsLabels()[id] || '';
     }
 
-    static getSocialsUrls() {
+    static getSocialsUrls(): IterableGenericObjectModel<string> {
         return {
             [this.TELEGRAM]: 'https://t.me/domartynov',
             [this.VK]: 'https://vk.com/martynov_do',
@@ -46,7 +48,7 @@ export default class SocialsEnum extends Enum {
         };
     }
 
-    static getSocialUrl(id) {
+    static getSocialUrl(id: string): string {
         return this.getSocialsUrls()[id] || '';
     }
 

@@ -7,8 +7,6 @@ import ArticleSchema from 'types/ArticleSchema';
 import Link from 'shared/Link';
 import RoutesEnum from 'enums/RoutesEnum';
 
-import './PostCard.scss';
-
 const bem = html.bem('PostCard');
 
 export default class PostCard extends React.PureComponent {

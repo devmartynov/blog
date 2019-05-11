@@ -4,7 +4,6 @@ import PropTypes from 'prop-types';
 import {html} from 'components';
 
 const bem = html.bem('CheckboxListFieldView');
-import './CheckboxListFieldView.scss';
 
 export default class CheckboxListFieldView extends React.PureComponent {
 

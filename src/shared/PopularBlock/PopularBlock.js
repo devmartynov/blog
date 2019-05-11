@@ -6,8 +6,6 @@ import Link from 'shared/Link';
 import Icon from 'shared/Icon';
 import RoutesEnum from 'enums/RoutesEnum';
 
-import './PopularBlock.scss';
-
 const bem = html.bem('PopularBlock');
 
 export default class PopularBlock extends React.PureComponent {

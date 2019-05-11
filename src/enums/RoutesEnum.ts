@@ -1,16 +1,18 @@
+// @ts-ignore
 import Enum from 'yii-steroids/base/Enum';
+import IterableGenericObjectModel from 'models/IterableGenericObject';
 
 export default class RoutesEnum extends Enum {
 
-    static MAIN = 'main';
-    static BLOG = 'blog';
-    static BLOG_DEVELOPMENT = 'blog_development';
-    static BLOG_LIFE = 'blog_life';
-    static BLOG_POST = 'blog_post';
-    static CONTACTS = 'contacts';
-    static ABOUT_ME = 'about_me';
+    static MAIN: string = 'main';
+    static BLOG: string = 'blog';
+    static BLOG_DEVELOPMENT: string = 'blog_development';
+    static BLOG_LIFE: string = 'blog_life';
+    static BLOG_POST: string = 'blog_post';
+    static CONTACTS: string = 'contacts';
+    static ABOUT_ME: string = 'about_me';
 
-    static getLabels() {
+    static getLabels(): IterableGenericObjectModel<string> {
         return {
             [this.MAIN]: __('Главная'),
             [this.BLOG]: __('Блог'),

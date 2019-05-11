@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import { html } from 'components';
-import './ButtonView.scss';
 
 const bem = html.bem('ButtonView');
 

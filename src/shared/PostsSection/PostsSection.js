@@ -14,8 +14,6 @@ import List from 'ui/list/List';
 //static data
 import { articlesDev, articlesLife } from 'static/data/articles';
 
-import './PostsSection.scss';
-
 const bem = html.bem('PostsSection');
 
 @connect()

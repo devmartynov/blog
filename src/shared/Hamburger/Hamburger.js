@@ -3,8 +3,6 @@ import PropTypes from 'prop-types';
 
 import { html } from 'components';
 
-import './Hamburger.scss';
-
 const bem = html.bem('Hamburger');
 
 export default class Hamburger extends React.PureComponent {

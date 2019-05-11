@@ -3,11 +3,9 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import {push} from 'react-router-redux';
 
-import {html} from 'components/index';
+import {html} from 'components';
 import NavItemSchema from 'types/NavItemSchema';
 import Link from 'shared/Link/index';
-
-import './Menu.scss';
 
 const bem = html.bem('Menu');
 

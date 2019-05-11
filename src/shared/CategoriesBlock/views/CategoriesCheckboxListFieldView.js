@@ -5,8 +5,6 @@ import _sum from 'lodash-es/sum';
 import { html } from 'components';
 import Icon from 'shared/Icon';
 
-import './CategoriesCheckboxListFieldView.scss';
-
 const bem = html.bem('CategoriesCheckboxListFieldView');
 
 export default class CategoriesCheckboxListFieldView extends React.PureComponent {

@@ -11,8 +11,6 @@ import LayoutEnum from 'enums/LayoutEnum';
 import Header from 'shared/Header';
 import Footer from 'shared/Footer';
 
-import './Layout.scss';
-
 const bem = html.bem('Layout');
 
 @navigationHoc(routesTree)

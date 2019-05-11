@@ -1,15 +1,33 @@
+// TODO: fix @ts-ignore and tslint:disable
 import _merge from 'lodash-es/merge';
 
-import ConfigComponent from './ConfigComponent';
+// @ts-ignore
 import ClientStorageComponent from 'yii-steroids/components/ClientStorageComponent';
+// @ts-ignore
+import ResourceComponent from 'yii-steroids/components/ResourceComponent';
+// @ts-ignore
+import StoreComponent from 'yii-steroids/components/StoreComponent';
+// @ts-ignore
+import UiComponent from 'yii-steroids/components/UiComponent';
+// @ts-ignore
 import HtmlComponent from 'yii-steroids/components/HtmlComponent';
+import ConfigComponent from './ConfigComponent';
 import HttpComponent from './HttpComponent';
 import LocaleComponent from './LocaleComponent';
-import ResourceComponent from 'yii-steroids/components/ResourceComponent';
-import StoreComponent from 'yii-steroids/components/StoreComponent';
-import UiComponent from 'yii-steroids/components/UiComponent';
+
+export interface IntConfig {
+    http: Array<{
+        apiUrl: string,
+    }>;
+    store: Array<{
+        history: Array<{
+            basename: string;
+        }>;
+    }>;
+}
 
 // Create instances
+// TODO: add type to every export const
 export const config = new ConfigComponent();
 export const clientStorage = new ClientStorageComponent();
 export const html = new HtmlComponent();
@@ -31,20 +49,20 @@ const instances = {
 };
 
 // Apply configuration
-const customConfig = {
+const customConfig: IntConfig = {
     http: {
         apiUrl: config.apiUrl,
     },
     store: {
         history: {
-            basename: '/'
+            basename: '/',
         },
     },
     ...instances.store.getState().config,
 };
-Object.keys(instances).forEach(name => {
-    _merge(
-        instances[name],
-        customConfig[name] || {}
-    );
+// tslint:disable:no-any
+Object.keys(instances).forEach((name: any) => {
+    // @ts-ignore
+    _merge(instances[name], customConfig[name] || {});
 });
+// tslint:enable:no-any

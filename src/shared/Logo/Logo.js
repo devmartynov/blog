@@ -6,8 +6,6 @@ import Link from 'shared/Link';
 import Icon from 'shared/Icon';
 import RoutesEnum from 'enums/RoutesEnum';
 
-import './Logo.scss';
-
 const bem = html.bem('Logo');
 
 export default class Logo extends React.PureComponent {

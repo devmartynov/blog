@@ -5,8 +5,6 @@ import { html } from 'components';
 import Icon from 'shared/Icon';
 import SocialsEnum from 'enums/SocialsEnum';
 
-import './SocialNetworks.scss';
-
 const bem = html.bem('SocialNetworks');
 
 export default class SocialNetworks extends React.PureComponent {

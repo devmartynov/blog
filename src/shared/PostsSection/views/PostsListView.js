@@ -2,13 +2,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Form from 'yii-steroids/ui/form/Form';
 
-import {html} from 'components/index';
+import {html} from 'components';
 import Pagination from 'ui/Pagination/index';
 import PaginationMoreView from 'ui/Pagination/PaginationMoreView';
 import CategoriesBlock from 'shared/CategoriesBlock';
 import PopularBlock from 'shared/PopularBlock';
-
-import './PostsListView.scss';
 
 const bem = html.bem('PostsListView');
 

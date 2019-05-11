@@ -5,8 +5,6 @@ import {html} from 'components';
 import CheckboxListField from 'ui/form/CheckboxListField';
 import CategoriesCheckboxListFieldView from 'shared/CategoriesBlock/views/CategoriesCheckboxListFieldView';
 
-import './CategoriesBlock.scss';
-
 const bem = html.bem('CategoriesBlock');
 
 export default class CategoriesBlock extends React.PureComponent {

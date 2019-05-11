@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import Modal from 'react-modal';
 
 import {html} from 'components';
-import './ModalView.scss';
 
 const bem = html.bem('ModalView');
 
