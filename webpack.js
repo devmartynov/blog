@@ -67,6 +67,7 @@ require('yii-steroids/webpack')
                     routes: __dirname + '/src/routes',
                     shared: __dirname + '/src/shared',
                     static: __dirname + '/src/static',
+                    state: __dirname + '/src/state',
                     style: __dirname + '/src/style',
                     types: __dirname + '/src/types',
                     ui: __dirname + '/src/ui',

@@ -1,5 +1,5 @@
 import { combineReducers, ReducersMapObject } from 'redux';
-import { reducer as form, FormReducer } from 'redux-form';
+import { reducer as form } from 'redux-form';
 // @ts-ignore
 import fields from 'yii-steroids/reducers/fields';
 // @ts-ignore
@@ -14,29 +14,9 @@ import modal from 'yii-steroids/reducers/modal';
 import routing from 'yii-steroids/reducers/routing';
 // @ts-ignore
 import navigation from 'yii-steroids/reducers/navigation';
+import RootStateModel from 'models/RootState';
 
-import {
-    IntFieldsState,
-    IntListState,
-    IntConfigState,
-    IntNotificationsState,
-    IntModalState,
-    IntRoutingState,
-    IntNavigationState,
-} from '../state/initialState.d';
-
-export interface IntRootState {
-    form: FormReducer;
-    fields: IntFieldsState;
-    list: IntListState;
-    config: IntConfigState;
-    notifications: IntNotificationsState;
-    modal: IntModalState;
-    routing: IntRoutingState;
-    navigation: IntNavigationState;
-}
-
-export default (asyncReducers: ReducersMapObject<IntRootState>) => combineReducers({
+export default (asyncReducers: ReducersMapObject<RootStateModel>) => combineReducers({
     form,
     fields,
     list,

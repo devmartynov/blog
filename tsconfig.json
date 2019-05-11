@@ -36,6 +36,7 @@
             "routes*": ["src/routes*"],
             "shared*": ["src/shared*"],
             "static*": ["src/static*"],
+            "state*": ["src/state*"],
             "style*": ["src/style*"],
             "ui*": ["src/ui*"],
             "yii-steroids*": ["node_modules/yii-steroids"]
