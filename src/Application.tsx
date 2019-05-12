@@ -8,7 +8,7 @@ import { hot } from 'react-hot-loader';
 import Router from 'yii-steroids/ui/nav/Router';
 
 import { ui } from 'components';
-import Layout from 'shared/Layout';
+import Layout from 'shared/Layout/index';
 import ErrorBoundary from 'shared/ErrorBoundary';
 import routesTree from './routes/index';
 import RoutesTreeModel from 'models/RoutesTree';

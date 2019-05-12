@@ -2,7 +2,7 @@ import React from 'react';
 import { Requireable, ReactNodeLike } from 'prop-types';
 
 import { html } from 'components';
-import Link from 'shared/Link';
+import Link from 'shared/Link/index';
 import NavItemModel from 'models/NavItem';
 
 const bem = html.bem('NavTabsView');

@@ -3,7 +3,7 @@ import moment from 'moment';
 
 interface IntOwnProps {
     value: string;
-    withTime: boolean;
+    withTime?: boolean;
 }
 
 export default class TimeLeftFormatter extends React.PureComponent<IntOwnProps> {

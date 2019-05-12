@@ -968,6 +968,13 @@
   version "0.2.4"
   resolved "https://registry.yarnpkg.com/@icons/material/-/material-0.2.4.tgz#e90c9f71768b3736e76d7dd6783fc6c2afa88bc8"
 
+"@martin_hotell/rex-tils@^2.1.1":
+  version "2.1.1"
+  resolved "https://registry.yarnpkg.com/@martin_hotell/rex-tils/-/rex-tils-2.1.1.tgz#3d90356d91311f11ae1ccf9b32cfb5a1c1744597"
+  optionalDependencies:
+    react "^16.5.2"
+    rxjs "^6.3.3"
+
 "@mrmlnc/readdir-enhanced@^2.2.1":
   version "2.2.1"
   resolved "https://registry.yarnpkg.com/@mrmlnc/readdir-enhanced/-/readdir-enhanced-2.2.1.tgz#524af240d1a360527b730475ecfa1344aa540dde"
@@ -1519,7 +1526,16 @@
     "@types/react" "*"
     redux "^4.0.0"
 
-"@types/react-router@^5.0.0":
+"@types/react-router-redux@^5.0.18":
+  version "5.0.18"
+  resolved "https://registry.yarnpkg.com/@types/react-router-redux/-/react-router-redux-5.0.18.tgz#5f28d5f7387fa71e33f602ccf9269e1609d47b8b"
+  dependencies:
+    "@types/history" "*"
+    "@types/react" "*"
+    "@types/react-router" "*"
+    redux ">= 3.7.2"
+
+"@types/react-router@*", "@types/react-router@^5.0.0":
   version "5.0.0"
   resolved "https://registry.yarnpkg.com/@types/react-router/-/react-router-5.0.0.tgz#22ae8f55d8af770ea1f755218936f01bfe1bfe27"
   dependencies:
@@ -9455,7 +9471,7 @@ react-transition-group@=1.2.1:
     prop-types "^15.5.6"
     warning "^3.0.0"
 
-"react@^15.0.0 || ^16.0.0", react@^16.4.2, react@^16.8.1:
+"react@^15.0.0 || ^16.0.0", react@^16.4.2, react@^16.5.2, react@^16.8.1:
   version "16.8.6"
   resolved "https://registry.yarnpkg.com/react/-/react-16.8.6.tgz#ad6c3a9614fd3a4e9ef51117f54d888da01f2bbe"
   dependencies:
@@ -9697,7 +9713,7 @@ redux-form@^8.2.0:
     react-is "^16.7.0"
     react-lifecycles-compat "^3.0.4"
 
-"redux@^3.6.0 || ^4.0.0", redux@^4.0.0:
+"redux@>= 3.7.2", "redux@^3.6.0 || ^4.0.0", redux@^4.0.0:
   version "4.0.1"
   resolved "https://registry.yarnpkg.com/redux/-/redux-4.0.1.tgz#436cae6cc40fbe4727689d7c8fae44808f1bfef5"
   dependencies:
@@ -10108,7 +10124,7 @@ rx@^4.1.0:
   version "4.1.0"
   resolved "https://registry.yarnpkg.com/rx/-/rx-4.1.0.tgz#a5f13ff79ef3b740fe30aa803fb09f98805d4782"
 
-rxjs@^6.1.0, rxjs@^6.4.0:
+rxjs@^6.1.0, rxjs@^6.3.3, rxjs@^6.4.0:
   version "6.5.2"
   resolved "https://registry.yarnpkg.com/rxjs/-/rxjs-6.5.2.tgz#2e35ce815cd46d84d02a209fb4e5921e051dbec7"
   dependencies:

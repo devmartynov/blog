@@ -2,7 +2,7 @@ import React from 'react';
 import { DefaultProps, createPropsGetter } from '@martin_hotell/rex-tils';
 
 import { html } from 'components';
-import Icon from 'shared/Icon';
+import Icon from 'shared/Icon/index';
 import SocialsEnum from 'enums/SocialsEnum';
 
 const bem = html.bem('SocialNetworks');
@@ -23,12 +23,12 @@ const defaultProps = DefaultProps({
 const getProps = createPropsGetter(defaultProps);
 
 interface IntSocials {
-    telegram: TBooleanOrUndefined;
-    vk: TBooleanOrUndefined;
-    insta: TBooleanOrUndefined;
-    ok: TBooleanOrUndefined;
-    youtube: TBooleanOrUndefined;
-    twitter: TBooleanOrUndefined;
+    telegram?: TBooleanOrUndefined;
+    vk?: TBooleanOrUndefined;
+    insta?: TBooleanOrUndefined;
+    ok?: TBooleanOrUndefined;
+    youtube?: TBooleanOrUndefined;
+    twitter?: TBooleanOrUndefined;
     [social: string]: TBooleanOrUndefined;
 }
 
@@ -62,7 +62,7 @@ export default class SocialNetworks extends React.PureComponent<TProps> {
                             >
                                 <Icon
                                     className={bem.element('icon')}
-                                    fill={color === 'white' && WHITE_COLOR}
+                                    fill={color === 'white' ? WHITE_COLOR : undefined}
                                     name={SocialsEnum.getIconsLabel(social)}
                                 />
                             </a>

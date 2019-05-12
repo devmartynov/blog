@@ -5,9 +5,7 @@ import { html } from 'components';
 const bem = html.bem('ErrorBoundary');
 
 interface IntProps {
-    // tslint:disable:no-any
-    children: any;
-    // tslint:enable:no-any
+    children: React.ReactNode;
 }
 
 interface IntState {

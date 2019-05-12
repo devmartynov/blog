@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 // @ts-ignore
 import { getNavItems } from 'yii-steroids/reducers/navigation';
 
-import PostsSection from 'shared/PostsSection';
+import PostsSection from 'shared/PostsSection/index';
 import RoutesEnum from 'enums/RoutesEnum';
 import NavItemModel from 'models/NavItem';
 import RootStateModel from 'models/RootState';
@@ -16,7 +16,7 @@ interface IntOwnProps {
 }
 
 interface IntStateProps {
-    navItems: NavItemModel;
+    navItems: Array<NavItemModel>;
 }
 
 type TProps = IntOwnProps & IntStateProps;
@@ -28,7 +28,6 @@ class BlogPage extends React.PureComponent<TProps> {
             <PostsSection
                 navItems={this.props.navItems}
                 isLife={this.props.isLife}
-                isArticle
                 listId={getListId(this.props.isLife)}
                 action={getAction(this.props.isLife)}
             />
@@ -40,4 +39,4 @@ const mapStateToProps = (state: RootStateModel): IntStateProps => ({
     navItems: getNavItems(state, RoutesEnum.BLOG),
 });
 
-export default connect(mapStateToProps, null)(BlogPage);
+export default connect(mapStateToProps)(BlogPage);

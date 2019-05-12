@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { html } from 'components';
-import Icon from 'shared/Icon';
+import Icon from 'shared/Icon/index';
 import IterableGenericObjectModel from 'models/IterableGenericObject';
 
 const bem = html.bem('ButtonView');

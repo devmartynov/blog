@@ -9,6 +9,7 @@
         "build-storybook": "build-storybook"
     },
     "dependencies": {
+        "@martin_hotell/rex-tils": "^2.1.1",
         "json-loader": "^0.5.7",
         "lodash": "^4.17.11",
         "react-headroom": "^2.2.8",
@@ -31,6 +32,7 @@
         "@types/react-modal": "^3.8.2",
         "@types/react-redux": "^7.0.8",
         "@types/react-router": "^5.0.0",
+        "@types/react-router-redux": "^5.0.18",
         "@types/redux-form": "^8.1.1",
         "@types/webpack-env": "^1.13.9",
         "copy-webpack-plugin": "^5.0.2",
