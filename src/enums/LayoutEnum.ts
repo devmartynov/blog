@@ -1,5 +1,4 @@
-// @ts-ignore
-import Enum from 'yii-steroids/base/Enum';
+import Enum from './Enum';
 
 export default class LayoutEnum extends Enum {
     static MAIN: string = 'main';
