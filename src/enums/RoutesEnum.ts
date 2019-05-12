@@ -1,5 +1,4 @@
-// @ts-ignore
-import Enum from 'yii-steroids/base/Enum';
+import Enum from './Enum';
 import IterableGenericObjectModel from 'models/IterableGenericObject';
 
 export default class RoutesEnum extends Enum {
