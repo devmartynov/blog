@@ -1,0 +1,54 @@
+{
+    "compilerOptions": {
+        "target": "es5",
+        "sourceMap": true,
+        "module": "esnext",
+        "moduleResolution": "node",
+        "jsx": "react",
+        "preserveConstEnums": true,
+        "removeComments": false,
+        "lib": [
+            "es6",
+            "es2016",
+            "dom",
+            "es5"
+        ],
+        "strict": true,
+        "importHelpers": true,
+        "noImplicitAny": true,
+        "noUnusedParameters": true,
+        "noUnusedLocals": true,
+        "experimentalDecorators": true,
+        "emitDecoratorMetadata": true,
+        "allowSyntheticDefaultImports": true,
+        "resolveJsonModule": true,
+        "downlevelIteration": true,
+        "outDir": "./public/",
+        "watch": true,
+        "allowJs": true,
+        "baseUrl": "./",
+        "paths": {
+            "actions*": ["src/actions*"],
+            "components": ["src/components"],
+            "enums*": ["src/enums*"],
+            "models*": ["src/models*"],
+            "reducers*": ["src/reducers*"],
+            "routes*": ["src/routes*"],
+            "shared*": ["src/shared*"],
+            "static*": ["src/static*"],
+            "state*": ["src/state*"],
+            "style*": ["src/style*"],
+            "ui*": ["src/ui*"],
+            "yii-steroids*": ["node_modules/yii-steroids"]
+        }
+    },
+    "include": [
+        "./**/*"
+    ],
+    "files": [
+        "typings.d.ts"
+    ],
+    "exclude": [
+        "node_modules"
+    ]
+}

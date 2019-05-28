@@ -1,7 +1,7 @@
 import React from 'react';
 import {Provider} from 'react-redux';
 import {configure, addDecorator} from '@storybook/react';
-import {ui, http, store} from 'components';
+import {ui, http, store} from 'components/index';
 import {setDefaults} from '@storybook/addon-info';
 import {setOptions} from '@storybook/addon-options';
 import {withKnobs} from "@storybook/addon-knobs/react";

@@ -2,30 +2,25 @@
 @import '../../style/helpers/vars';
 
 .Header {
-  height: 56px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: 8px 16px;
   background-color: $color-base;
 
   @include horizontal-phone {
-    height: 76px;
+    padding-top: 16px;
+    padding-bottom: 16px;
   }
 
-  &__inner {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 16px 16px 0;
-
-    @include horizontal-phone {
-      padding-top: 24px;
-    }
-
-    @include notebook {
-      padding-left: 64px;
-      padding-right: 64px;
-    }
+  @include notebook {
+    padding-left: 64px;
+    padding-right: 64px;
   }
 
   &__logo {
+    margin-right: auto;
+
     .Logo__icon {
       height: 24px;
       width: auto;
@@ -35,29 +30,6 @@
         margin-right: 8px;
       }
     }
-  }
-
-  &__work-status {
-    display: none;
-
-    @include horizontal-phone {
-      display: block;
-    }
-  }
-
-  &__content {
-    flex-grow: 1;
-    margin-right: 16px;
-
-    @include notebook {
-      margin-right: 80px;
-    }
-  }
-
-  &__content-inner {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
   }
 
   &__nav {
@@ -73,13 +45,14 @@
   }
 
   &__me-link {
-
-    @include small-phone {
-      position: absolute;
-    }
+    margin-right: 16px;
 
     &_hidden {
       opacity: 0;
+    }
+
+    @include notebook {
+      margin-right: 80px;
     }
   }
 }

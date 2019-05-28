@@ -1,6 +1,6 @@
 // base colors
-$color-base: #fff;
-$color-base-revert: #000;
+$color-base: #ffffff;
+$color-base-revert: #000000;
 
 // brand colors
 $brand-blue: #0066FF;
@@ -8,11 +8,11 @@ $brand-yellow: #FFF45F;
 $brand-black: #151515;
 
 // text colors
-$text-white: #fff;
+$text-white: #ffffff;
 $text-grey-lightest: #f1f1f1;
 $text-grey-more-light: #f9f9f9;
-$text-grey-light: #E0E0E0;
-$text-grey: #9E9E9E;
+$text-grey-light: #e0e0e0;
+$text-grey: #9e9e9e;
 $text-grey-dark: #737373;
 $text-grey-darker: #616161;
 $text-grey-darkest: #212121;
@@ -30,16 +30,16 @@ $color-gg-8: #212121;
 $color-gg-9: #151515;
 
 // links colors
-$link-blue-light: #9DC4FF;
-$link-blue: #0066FF;
-$link-blue-dark: #0046B1;
+$link-blue-light: #9dc4ff;
+$link-blue: #0066ff;
+$link-blue-dark: #0046b1;
 
 // other colors
-//TODO: find better green color
-$red: #E53935;
+// TODO: find better green color
+$red: #e53935;
 $green: lightgreen;
-$blue-lighter: #EBF3FF;
-$blue-darker: #002F76;
+$blue-lighter: #ebf3ff;
+$blue-darker: #002f76;
 
 // opacity
 $hover-opacity: 0.7;
