@@ -6,7 +6,6 @@ import LayoutEnum from 'enums/LayoutEnum';
 import MainPage from './MainPage/index';
 import BlogPage from './BlogPage/index';
 import PostPage from './PostPage/index';
-import ContactsPage from './ContactsPage/index';
 import AboutMePage from './AboutMePage/index';
 
 export default {
@@ -80,16 +79,6 @@ export default {
             label: RoutesEnum.getLabel(RoutesEnum.ABOUT_ME),
             // @ts-ignore
             title: RoutesEnum.getLabel(RoutesEnum.ABOUT_ME),
-        },
-        {
-            id: RoutesEnum.CONTACTS,
-            exact: true,
-            path: '/contacts',
-            component: ContactsPage,
-            // @ts-ignore
-            label: RoutesEnum.getLabel(RoutesEnum.CONTACTS),
-            // @ts-ignore
-            title: RoutesEnum.getLabel(RoutesEnum.CONTACTS),
         },
     ],
 };

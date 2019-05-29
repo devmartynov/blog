@@ -1,7 +1,6 @@
 // Routes
 @import './../../routes/AboutMePage/AboutMePage';
 @import './../../routes/BlogPage/BlogPage';
-@import './../../routes/ContactsPage/ContactsPage';
 @import './../../routes/MainPage/MainPage';
 @import './../../routes/NotesPage/NotesPage';
 @import './../../routes/PostPage/PostPage';
@@ -12,6 +11,7 @@
 @import './../../shared/ErrorBoundary/ErrorBoundary';
 @import './../../shared/Footer/Footer';
 @import './../../shared/Hamburger/Hamburger';
+@import './../../shared/SocialNetworks/SocialNetworks';
 @import './../../shared/Header/Header';
 @import './../../shared/Layout/Layout';
 @import './../../shared/Logo/Logo';
@@ -22,7 +22,6 @@
 @import './../../shared/PostCard/PostCard';
 @import './../../shared/PostsSection/PostsSection';
 @import './../../shared/PostsSection/views/PostsListView';
-@import './../../shared/SocialNetworks/SocialNetworks';
 @import './../../shared/WorkStatus/WorkStatus';
 
 // UI

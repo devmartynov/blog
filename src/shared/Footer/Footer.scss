@@ -81,9 +81,7 @@
   }
 
   &__copyrights {
-    @include horizontal-phone-down {
-      margin-bottom: 8px;
-    }
+
   }
 
   &__site-created-date {

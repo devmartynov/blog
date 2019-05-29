@@ -1,7 +1,6 @@
 import React from 'react';
 
 import { html } from 'components';
-import SocialNetworks from 'shared/SocialNetworks/index';
 import Icon from 'shared/Icon/index';
 import Button from 'ui/form/Button';
 
@@ -43,9 +42,6 @@ export default class Footer extends React.PureComponent {
                                     Chulakov Design System
                                 </a>
                             </div>
-                        </div>
-                        <div className={bem.element('socials')}>
-                            <SocialNetworks/>
                         </div>
                     </div>
                 </div>

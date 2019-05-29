@@ -7,7 +7,7 @@ import SocialsEnum from 'enums/SocialsEnum';
 
 const bem = html.bem('SocialNetworks');
 const WHITE_COLOR = '#fff';
-const defaultSocials: IntSocials = {
+const DEFAULT_SOCIALS: IntSocials = {
     telegram: true,
     vk: true,
     insta: true,
@@ -18,7 +18,7 @@ const defaultSocials: IntSocials = {
 const defaultProps = DefaultProps({
     color: 'white' as 'white' | 'black',
     layout: 'horizontal' as 'horizontal' | 'vertical',
-    socials: defaultSocials as IntSocials,
+    socials: DEFAULT_SOCIALS as IntSocials,
 });
 const getProps = createPropsGetter(defaultProps);
 
@@ -33,7 +33,7 @@ interface IntSocials {
 }
 
 type TBooleanOrUndefined = boolean | undefined;
-type TProps = DefaultProps<typeof defaultProps>;
+type TProps = DefaultProps<typeof defaultProps> & {className: string};
 
 export default class SocialNetworks extends React.PureComponent<TProps> {
 
@@ -43,7 +43,7 @@ export default class SocialNetworks extends React.PureComponent<TProps> {
         const { color, layout, socials } = getProps(this.props);
 
         return (
-            <ul className={bem.block({ layout: layout === 'vertical' && 'vertical' })}>
+            <ul className={bem(bem.block({ layout: layout === 'vertical' && 'vertical' }), this.props.className)}>
                 {Object.keys(socials).map((social: string, index: number) => {
                     if (!socials[social]) {
                         return null;

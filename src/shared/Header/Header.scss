@@ -5,6 +5,7 @@
   display: flex;
   flex-wrap: wrap;
   align-items: center;
+  min-height: 56px;
   padding: 8px 16px;
   background-color: $color-base;
 
@@ -44,11 +45,16 @@
     }
   }
 
-  &__me-link {
+  &__socials {
+    display: none;
     margin-right: 16px;
 
     &_hidden {
       opacity: 0;
+    }
+
+    @include phone {
+      display: flex;
     }
 
     @include notebook {

@@ -5,9 +5,9 @@ import Headroom from 'react-headroom';
 import { getNavItems } from 'yii-steroids/reducers/navigation';
 
 import { html } from 'components';
+import SocialNetworks from 'shared/SocialNetworks';
 import Logo from 'shared/Logo/index';
 import Hamburger from 'shared/Hamburger/index';
-import MeLink from 'shared/MeLink/index';
 import Menu from 'shared/Menu/index';
 import Navigation from 'shared/Navigation';
 import RoutesEnum from 'enums/RoutesEnum';
@@ -48,16 +48,17 @@ class Header extends React.PureComponent<IntStateProps, IntOwnState> {
                         className={bem.element('nav', { hidden: this.state.isMenuOpen })}
                         navItems={this.props.navItems}
                     />
-                    <MeLink className={bem.element('me-link', { hidden: this.state.isMenuOpen })}/>
+                    <SocialNetworks
+                        className={bem.element('socials', {hidden: this.state.isMenuOpen})}
+                        color='black'
+                    />
                     <Hamburger
                         isOpen={this.state.isMenuOpen}
                         onClick={this.onHamburgerClick}
                     />
                     {this.state.isMenuOpen && (
                         <Menu
-                            navItems={this.props.navItems.filter(
-                                (item: NavItemModel) => item.id !== RoutesEnum.CONTACTS,
-                            )}
+                            navItems={this.props.navItems}
                             closeMenu={this.onHamburgerClick}
                         />
                     )}
