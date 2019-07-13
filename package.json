@@ -11,7 +11,7 @@
     "dependencies": {
         "@martin_hotell/rex-tils": "^2.1.1",
         "json-loader": "^0.5.7",
-        "lodash": "^4.17.11",
+        "lodash": "^4.17.13",
         "react-headroom": "^2.2.8",
         "redux-form": "^8.2.0",
         "yii-steroids": "^1.7.12"
