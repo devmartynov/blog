@@ -1,8 +1,8 @@
-import IterableGenericObjectModel from 'models/IterableGenericObject';
+import StringMap from 'models/StringMap';
 
 export default class Enum {
 
-    static getLabels(): IterableGenericObjectModel<string> {
+    static getLabels(): StringMap<string> {
         return {};
     }
 
@@ -14,7 +14,7 @@ export default class Enum {
         return this.getLabels()[id] || '';
     }
 
-    static getCssClasses(): IterableGenericObjectModel<string> {
+    static getCssClasses(): StringMap<string> {
         return {};
     }
 
@@ -22,7 +22,7 @@ export default class Enum {
         return this.getCssClasses()[id] || '';
     }
 
-    static getDropdownItems() {
+    static getDropdownItems(): any {
         return Object.entries(this.getLabels())
             .map(([id, label]) => ({
                 label,

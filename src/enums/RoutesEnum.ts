@@ -1,5 +1,5 @@
 import Enum from './Enum';
-import IterableGenericObjectModel from 'models/IterableGenericObject';
+import StringMap from 'models/IterableGenericObject';
 
 export default class RoutesEnum extends Enum {
 
@@ -10,7 +10,7 @@ export default class RoutesEnum extends Enum {
     static BLOG_POST: string = 'blog_post';
     static ABOUT_ME: string = 'about_me';
 
-    static getLabels(): IterableGenericObjectModel<string> {
+    static getLabels(): StringMap<string> {
         return {
             [this.MAIN]: __('Главная'),
             [this.BLOG]: __('Блог'),

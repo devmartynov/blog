@@ -2,9 +2,9 @@ import React from 'react';
 
 import { html } from 'components';
 
-const bem = html.bem('MainPage');
+const bem = html.bem('IndexPage');
 
-export default class MainPage extends React.PureComponent {
+export default class IndexPage extends React.PureComponent {
 
     render() {
         return (

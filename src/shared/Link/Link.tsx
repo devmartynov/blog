@@ -6,7 +6,7 @@ import { getNavUrl } from 'yii-steroids/reducers/navigation';
 
 import { onLinkClick } from './utils';
 import RootStateModel from 'models/RootState';
-import IterableGenericObjectModel from 'models/IterableGenericObject';
+import StringMap from 'models/IterableGenericObject';
 import { MouseClickEventModel } from 'models/MouseClickEvent';
 
 interface IntOwnProps {
@@ -15,7 +15,7 @@ interface IntOwnProps {
     title?: string;
     url?: string;
     pageId?: string;
-    params?: IterableGenericObjectModel<string | boolean>;
+    params?: StringMap<string | boolean>;
     onClick?(e: MouseClickEventModel): void;
 }
 

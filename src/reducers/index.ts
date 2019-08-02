@@ -1,4 +1,4 @@
-import { combineReducers, ReducersMapObject } from 'redux';
+import { combineReducers } from 'redux';
 import { reducer as form } from 'redux-form';
 // @ts-ignore
 import fields from 'yii-steroids/reducers/fields';
@@ -9,14 +9,15 @@ import config from 'yii-steroids/reducers/config';
 // @ts-ignore
 import notifications from 'yii-steroids/reducers/notifications';
 // @ts-ignore
+import navigation from 'yii-steroids/reducers/navigation';
+// @ts-ignore
 import modal from 'yii-steroids/reducers/modal';
 // @ts-ignore
 import routing from 'yii-steroids/reducers/routing';
-// @ts-ignore
-import navigation from 'yii-steroids/reducers/navigation';
-import RootStateModel from 'models/RootState';
 
-export default (asyncReducers: ReducersMapObject<RootStateModel>) => combineReducers({
+// tslint:disable
+// @ts-ignore
+export default (asyncReducers) => combineReducers({
     form,
     fields,
     list,
@@ -25,5 +26,5 @@ export default (asyncReducers: ReducersMapObject<RootStateModel>) => combineRedu
     modal,
     routing,
     navigation,
-    ...asyncReducers,
+    ...asyncReducers
 });

@@ -2,7 +2,7 @@ import React from 'react';
 
 import { html } from 'components';
 import Icon from 'shared/Icon/index';
-import IterableGenericObjectModel from 'models/IterableGenericObject';
+import StringMap from 'models/IterableGenericObject';
 
 const bem = html.bem('ButtonView');
 
@@ -78,7 +78,7 @@ export default class ButtonView extends React.PureComponent<IntOwnProps> {
         );
     }
 
-    _getClassName(modifiers: IterableGenericObjectModel<string | boolean> = {}) {
+    _getClassName(modifiers: StringMap<string | boolean> = {}) {
         return bem(
             bem.block({
                 outline: this.props.outline,

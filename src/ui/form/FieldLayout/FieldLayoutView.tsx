@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { html } from 'components';
-import IterableGenericObjectModel from 'models/IterableGenericObject';
+import StringMap from 'models/IterableGenericObject';
 
 const bem = html.bem('FieldLayoutView');
 
@@ -14,7 +14,7 @@ interface IntOwnProps {
     disabled: boolean;
     layout: string;
     layoutClassName: string;
-    layoutProps: IterableGenericObjectModel<any>;
+    layoutProps: StringMap<any>;
 }
 
 // tslint:enable:no-any

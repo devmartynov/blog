@@ -47,12 +47,12 @@ import VolumeIcon from './VolumeIcon/index';
 import ZoomIcon from './ZoomIcon/index';
 import EyeIcon from './EyeIcon/index';
 
-import IterableGenericObjectModel from 'models/IterableGenericObject';
+import StringMap from 'models/IterableGenericObject';
 
 export interface IntIconOwnProps {
     width?: number;
     height?: number;
-    style?: IterableGenericObjectModel<string | number>;
+    style?: StringMap<string | number>;
     viewBox?: string;
     className?: string;
     fill?: string;

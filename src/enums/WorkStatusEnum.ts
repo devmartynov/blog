@@ -1,5 +1,5 @@
 import Enum from './Enum';
-import IterableGenericObjectModel from 'models/IterableGenericObject';
+import StringMap from 'models/IterableGenericObject';
 
 export default class WorkStatusEnum extends Enum {
 
@@ -7,7 +7,7 @@ export default class WorkStatusEnum extends Enum {
     static BUSY: string = 'busy';
     static HAVE_FREE_TIME: string = 'have_free_time';
 
-    static getLabels(): IterableGenericObjectModel<string> {
+    static getLabels(): StringMap<string> {
         return {
             [this.FREE]: __('Полностью свободен'),
             [this.BUSY]: __('Занят'),
@@ -15,7 +15,7 @@ export default class WorkStatusEnum extends Enum {
         };
     }
 
-    static getCssClasses(): IterableGenericObjectModel<string> {
+    static getCssClasses(): StringMap<string> {
         return {
             [this.FREE]: 'free',
             [this.BUSY]: 'busy',
@@ -23,7 +23,7 @@ export default class WorkStatusEnum extends Enum {
         };
     }
 
-    static getTitles(): IterableGenericObjectModel<string> {
+    static getTitles(): StringMap<string> {
         return {
             [this.FREE]: __('Могу посвятить все свое время новому проекту'),
             [this.BUSY]: __('В данный момент сильно занят'),

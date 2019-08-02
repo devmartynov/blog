@@ -1,5 +1,5 @@
 import Enum from './Enum';
-import IterableGenericObjectModel from 'models/IterableGenericObject';
+import StringMap from 'models/IterableGenericObject';
 
 export default class SocialsEnum extends Enum {
 
@@ -10,7 +10,7 @@ export default class SocialsEnum extends Enum {
     static YOUTUBE: string = 'youtube';
     static TWITTER: string = 'twitter';
 
-    static getLabels(): IterableGenericObjectModel<string> {
+    static getLabels(): StringMap<string> {
         return {
             [this.TELEGRAM]: __('Телеграм'),
             [this.VK]: __('Вконтакте'),
@@ -21,7 +21,7 @@ export default class SocialsEnum extends Enum {
         };
     }
 
-    static getIconsLabels(): IterableGenericObjectModel<string> {
+    static getIconsLabels(): StringMap<string> {
         return {
             [this.TELEGRAM]: 'telegram',
             [this.VK]: 'vk',
@@ -36,7 +36,7 @@ export default class SocialsEnum extends Enum {
         return this.getIconsLabels()[id] || '';
     }
 
-    static getSocialsUrls(): IterableGenericObjectModel<string> {
+    static getSocialsUrls(): StringMap<string> {
         return {
             [this.TELEGRAM]: 'https://t.me/domartynov',
             [this.VK]: 'https://vk.com/martynov_do',
