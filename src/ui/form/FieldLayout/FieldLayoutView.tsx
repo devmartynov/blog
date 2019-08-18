@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { html } from 'components';
-import StringMap from 'models/IterableGenericObject';
+import StringMap from 'models/StringMap';
 
 const bem = html.bem('FieldLayoutView');
 

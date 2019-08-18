@@ -10,7 +10,7 @@ import Logo from 'shared/Logo/index';
 import Hamburger from 'shared/Hamburger/index';
 import Menu from 'shared/Menu/index';
 import Navigation from 'shared/Navigation';
-import RoutesEnum from 'enums/RoutesEnum';
+import { ROUTE_ROOT } from '../../routes';
 import RootStateModel from 'models/RootState';
 import NavItemModel from 'models/NavItem';
 
@@ -40,10 +40,7 @@ class Header extends React.PureComponent<IntStateProps, IntOwnState> {
         return (
             <Headroom>
                 <header className={bem.block()}>
-                    <Logo
-                        className={bem.element('logo')}
-                        title={__('Перейти на главую страницу')}
-                    />
+                    <Logo className={bem.element('logo')}/>
                     <Navigation
                         className={bem.element('nav', { hidden: this.state.isMenuOpen })}
                         navItems={this.props.navItems}
@@ -87,7 +84,7 @@ class Header extends React.PureComponent<IntStateProps, IntOwnState> {
 }
 
 const mapStateToProps = (state: RootStateModel): IntStateProps => ({
-    navItems: getNavItems(state, RoutesEnum.MAIN),
+    navItems: getNavItems(state, ROUTE_ROOT),
 });
 
 export default connect(mapStateToProps)(Header);

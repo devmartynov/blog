@@ -23,18 +23,19 @@
     @include horizontal-phone {
       font-size: 45px;
     }
+  }
 
-    a {
+  &__title-link {
+    color: $text-black;
+
+    &:visited {
       color: $text-black;
-
-      &:hover {
-        color: $brand-blue;
-      }
-
-      &:visited {
-        color: $text-black;
-      }
     }
+
+    &:hover {
+      color: $brand-blue;
+    }
+
   }
 
   &__categories {

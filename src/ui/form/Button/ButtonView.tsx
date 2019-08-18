@@ -2,7 +2,7 @@ import React from 'react';
 
 import { html } from 'components';
 import Icon from 'shared/Icon/index';
-import StringMap from 'models/IterableGenericObject';
+import StringMap from 'models/StringMap';
 
 const bem = html.bem('ButtonView');
 
@@ -27,9 +27,10 @@ interface IntOwnProps {
     submitting: boolean;
     block: boolean;
     arrow: boolean;
+    isLinkView: boolean;
     bordered: boolean;
-    onClick: () => void;
-    view: () => void;
+    onClick(): void;
+    view(): void;
 
 }
 
@@ -79,6 +80,10 @@ export default class ButtonView extends React.PureComponent<IntOwnProps> {
     }
 
     _getClassName(modifiers: StringMap<string | boolean> = {}) {
+        if (this.props.isLinkView) {
+            return this.props.className;
+        }
+
         return bem(
             bem.block({
                 outline: this.props.outline,

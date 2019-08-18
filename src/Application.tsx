@@ -9,9 +9,7 @@ import Router from 'yii-steroids/ui/nav/Router';
 
 import { ui } from 'components';
 import Layout from 'shared/Layout/index';
-import ErrorBoundary from 'shared/ErrorBoundary';
-import routesTree from './routes/index';
-import RoutesTreeModel from 'models/RoutesTree';
+import routes from './routes';
 
 import './style/index.scss';
 
@@ -22,31 +20,18 @@ ui.addViews({
     'form.ButtonView': require('ui/form/Button/ButtonView').default,
     'nav.NavTabsView': require('ui/nav/Nav/NavTabsView').default,
     'form.FieldLayoutView': require('ui/form/FieldLayout/FieldLayoutView').default,
+    'list.ListView': require('ui/list/List/ListView').default,
 });
 
 @hot(module)
 export default class Application extends React.PureComponent {
 
-    // TODO: fix routes={Application.treeToList(routesTree)} error
-    static treeToList(item: RoutesTreeModel) {
-        let items = [item];
-        if (item.items) {
-            item.items.forEach((sub: RoutesTreeModel) => {
-                items = items.concat(Application.treeToList(sub));
-            });
-        }
-        return items;
-    }
-
     render() {
         return (
-            <ErrorBoundary>
-                <Router
-                    wrapperView={Layout}
-                    // @ts-ignore
-                    routes={Application.treeToList(routesTree)}
-                />
-            </ErrorBoundary>
+            <Router
+                wrapperView={Layout}
+                routes={routes}
+            />
         );
     }
 }

@@ -1,15 +1,15 @@
 import React from 'react';
+// @ts-ignore
+import Link from 'yii-steroids/ui/nav/Link';
 
 import { html } from 'components';
-import Link from 'shared/Link/index';
 import Icon from 'shared/Icon/index';
-import RoutesEnum from 'enums/RoutesEnum';
+import { ROUTE_ROOT } from '../../routes';
 
 const bem = html.bem('Logo');
 
 interface IntOwnProps {
     className: string;
-    title: string;
 }
 
 export default class Logo extends React.PureComponent<IntOwnProps> {
@@ -18,8 +18,8 @@ export default class Logo extends React.PureComponent<IntOwnProps> {
         return (
             <Link
                 className={bem(bem.block(), this.props.className)}
-                pageId={RoutesEnum.MAIN}
-                title={this.props.title}
+                toRoute={ROUTE_ROOT}
+                isLinkView
             >
                 <Icon
                     className={bem.element('icon')}

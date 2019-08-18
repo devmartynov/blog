@@ -47,7 +47,7 @@ import VolumeIcon from './VolumeIcon/index';
 import ZoomIcon from './ZoomIcon/index';
 import EyeIcon from './EyeIcon/index';
 
-import StringMap from 'models/IterableGenericObject';
+import StringMap from 'models/StringMap';
 
 export interface IntIconOwnProps {
     width?: number;

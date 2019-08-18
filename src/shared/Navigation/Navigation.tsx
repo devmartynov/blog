@@ -1,7 +1,8 @@
 import React from 'react';
+// @ts-ignore
+import Link from 'yii-steroids/ui/nav/Link';
 
 import { html } from 'components';
-import Link from 'shared/Link/index';
 import NavItemModel from 'models/NavItem';
 
 const bem = html.bem('Navigation');
@@ -23,9 +24,10 @@ export default class Navigation extends React.PureComponent<IntOwnProps> {
                             key={item.id}
                         >
                             <Link
-                                className={bem.element('link', { 'active': item.isActive })}
+                                className={bem.element('link', { active: item.isActive })}
                                 label={item.label}
-                                url={item.url}
+                                toRoute={item.id}
+                                isLinkView
                             />
                         </li>
                     ))}

@@ -1,9 +1,10 @@
 import React from 'react';
+// @ts-ignore
+import Link from 'yii-steroids/ui/nav/Link';
 
 import { html } from 'components';
-import Link from 'shared/Link/index';
 import TimeLeftFormatter from 'ui/format/TimeLeftFormatter';
-import RoutesEnum from 'enums/RoutesEnum';
+import { ROUTE_BLOG_POST } from '../../routes';
 import ArticleModel from 'models/Article';
 
 const bem = html.bem('PostCard');
@@ -21,16 +22,19 @@ export default class PostCard extends React.PureComponent<IntOwnProps> {
         }
 
         // TODO: copy to clipboard
-        // TODO: we should get categories when app loads first time, then set to redux
+        // TODO: fetch categories when app loads first time, then set to redux
         return (
             <article className={bem(bem.block(), this.props.className)}>
                 <h2 className={bem.element('title')}>
                     <Link
+                        className={bem.element('title-link')}
                         label={this.props.item.title}
-                        pageId={RoutesEnum.BLOG_POST}
-                        params={{
+                        toRoute={ROUTE_BLOG_POST}
+                        toRouteParams={{
+                            category: 'dev',
                             slug: this.props.item.slug,
                         }}
+                        isLinkView
                     />
                 </h2>
                 <ul className={bem.element('categories')}>
@@ -59,8 +63,9 @@ export default class PostCard extends React.PureComponent<IntOwnProps> {
                         <Link
                             className={bem.element('read-link')}
                             label={__('Читать дальше')}
-                            pageId={RoutesEnum.BLOG_POST}
-                            params={{
+                            toRoute={ROUTE_BLOG_POST}
+                            toRouteParams={{
+                                category: 'dev',
                                 slug: this.props.item.slug,
                             }}
                         />

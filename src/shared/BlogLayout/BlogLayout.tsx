@@ -9,23 +9,32 @@ import { getCurrentRoute } from 'yii-steroids/reducers/routing';
 import Link from 'yii-steroids/ui/nav/Link';
 
 import { html } from 'components';
-import routes, { ROUTE_BLOG } from '../../routes';
+import routes, { ROUTE_BLOG, ROUTE_BLOG_POST } from '../../routes';
 import NavItemModel from 'models/NavItem';
 import RootStateModel from 'models/RootState';
 
-import './ProfileLayout.scss';
+import './BlogLayout.scss';
 
-const bem = html.bem('ProfileLayout');
+const bem = html.bem('BlogLayout');
 
 interface IntProps {
     routeId: string;
-    blogNavItems: Array<NavItemModel>
+    blogNavItems: Array<NavItemModel>;
 }
 
 class BlogLayout extends React.PureComponent<IntProps> {
 
+    // @ts-ignore
     render() {
-        const ContentComponent = _get(routes, ['items', ROUTE_BLOG, 'items', this.props.routeId, 'component']);
+        const ContentComponent: React.ReactNode = _get(
+            routes, ['items', ROUTE_BLOG, 'items', this.props.routeId, 'component'],
+        );
+
+        if (this.props.routeId === ROUTE_BLOG_POST) {
+            // @ts-ignore
+            return <ContentComponent/>;
+        }
+
         return (
             <section className={bem.block()}>
                 <h1 className={bem.element('title')}>
@@ -33,8 +42,8 @@ class BlogLayout extends React.PureComponent<IntProps> {
                 </h1>
                 <ul className={bem.element('nav')}>
                     {this.props.blogNavItems
-                        .filter(item => item.isNavVisible !== false)
-                        .map(item => (
+                        .filter((item: NavItemModel) => item.isNavVisible !== false)
+                        .map((item: NavItemModel) => (
                             <li
                                 className={bem.element('nav-item')}
                                 key={item.id}
@@ -45,6 +54,7 @@ class BlogLayout extends React.PureComponent<IntProps> {
                                     })}
                                     toRoute={item.id}
                                     label={item.label}
+                                    isLinkView
                                 />
                             </li>
                         ))
@@ -52,6 +62,7 @@ class BlogLayout extends React.PureComponent<IntProps> {
                 </ul>
                 <div className={bem.element('content')}>
                     {ContentComponent && (
+                        // @ts-ignore
                         <ContentComponent/>
                     )}
                 </div>
@@ -65,4 +76,5 @@ const mapStateToProps = (state: RootStateModel) => ({
     blogNavItems: getNavItems(state, ROUTE_BLOG),
 });
 
-export default connect(mapStateToProps, null)(BlogLayout)
+// @ts-ignore
+export default connect(mapStateToProps, null)(BlogLayout);

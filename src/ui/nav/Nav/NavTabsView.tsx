@@ -1,8 +1,9 @@
 import React from 'react';
 import { Requireable, ReactNodeLike } from 'prop-types';
+// @ts-ignore
+import Link from 'yii-steroids/ui/nav/Link';
 
 import { html } from 'components';
-import Link from 'shared/Link/index';
 import NavItemModel from 'models/NavItem';
 
 const bem = html.bem('NavTabsView');

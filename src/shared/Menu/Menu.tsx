@@ -2,10 +2,11 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Dispatch } from 'redux';
 import { push } from 'react-router-redux';
+// @ts-ignore
+import Link from 'yii-steroids/ui/nav/Link';
 
 import { html } from 'components';
 import NavItemModel from 'models/NavItem';
-import Link from 'shared/Link/index';
 import { MouseClickEventModel } from 'models/MouseClickEvent';
 
 const bem = html.bem('Menu');
@@ -43,6 +44,7 @@ class Menu extends React.PureComponent<IntProps> {
                                             this.props.dispatch(push(item.url));
                                         }}
                                         url={item.url}
+                                        isLinkView
                                     />
                                 </li>
                             ))}

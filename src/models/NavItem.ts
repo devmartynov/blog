@@ -5,5 +5,6 @@ export default interface NavItemModel {
     url: string;
     isActive: boolean;
     isVisible: boolean | null;
+    isNavVisible?: boolean;
     items?: Array<NavItemModel>;
 }

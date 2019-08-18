@@ -1,9 +1,10 @@
 import React from 'react';
+// @ts-ignore
+import Link from 'yii-steroids/ui/nav/Link';
 
 import { html } from 'components';
-import Link from 'shared/Link/index';
-import Icon from 'shared/Icon/index';
-import RoutesEnum from 'enums/RoutesEnum';
+import Icon from 'shared/Icon';
+import { ROUTE_BLOG_POST } from '../../routes';
 
 const bem = html.bem('PopularBlock');
 
@@ -71,8 +72,8 @@ export default class PopularBlock extends React.PureComponent<IntOwnProps> {
                             <Link
                                 className={bem.element('link')}
                                 label={item.label}
-                                pageId={RoutesEnum.BLOG_POST}
-                                params={{
+                                toRoute={ROUTE_BLOG_POST}
+                                toRouteParams={{
                                     id: item.id,
                                 }}
                             />

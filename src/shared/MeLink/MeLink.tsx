@@ -1,8 +1,9 @@
 import React from 'react';
+// @ts-ignore
+import Link from 'yii-steroids/ui/nav/Link';
 
 import { html } from 'components';
-import Link from 'shared/Link/index';
-import RoutesEnum from 'enums/RoutesEnum';
+import { ROUTE_ABOUT_ME } from '../../routes';
 import { getRandomNumber } from './utils';
 
 const bem = html.bem('MeLink');
@@ -57,7 +58,7 @@ export default class MeLink extends React.PureComponent<IntOwnProps, IntOwnState
         return (
             <Link
                 className={bem(bem.block(), this.props.className)}
-                pageId={RoutesEnum.ABOUT_ME}
+                toRoute={ROUTE_ABOUT_ME}
             >
                 <div
                     className={bem.element('inner')}

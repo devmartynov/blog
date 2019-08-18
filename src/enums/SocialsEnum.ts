@@ -1,5 +1,5 @@
 import Enum from './Enum';
-import StringMap from 'models/IterableGenericObject';
+import StringMap from 'models/StringMap';
 
 export default class SocialsEnum extends Enum {
 

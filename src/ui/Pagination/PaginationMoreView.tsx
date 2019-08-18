@@ -3,7 +3,7 @@ import React from 'react';
 import Button from 'yii-steroids/ui/form/Button';
 
 import { html } from 'components';
-import StringMap from 'models/IterableGenericObject';
+import StringMap from 'models/StringMap';
 
 const bem = html.bem('PaginationMoreView');
 
